@@ -15,7 +15,7 @@ const beaches: Beach[] = [
   { id: "jaguaribe", name: "Jaguaribe", place: "Orla de Salvador", score: 68, wave: "0,7 m", period: "8 s", wind: "E · 18 km/h", color: "#e88977", image: photos.jaguaribe, note: "Boa porta de entrada para iniciantes e escolas locais.", coords: [-12.96, -38.38] },
 ];
 
-function Logo() { return <a className="brand" href="#top"><span className="brand-mark">◜</span><span>ondai</span></a>; }
+function Logo() { return <a className="brand" href="#top"><span className="ondai-logo-mark" aria-hidden="true"><i /><i /></span><span>ondai</span></a>; }
 
 export default function Home() {
   const [screen, setScreen] = useState<"landing" | "auth" | "app">("landing");
