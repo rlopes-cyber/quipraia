@@ -1,0 +1,26 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">QuiPraia 3BC</title>
+  <desc id="desc">Assinatura principal QuiPraia com símbolo Q oceânico e wordmark vetorial aerodinâmico.</desc>
+  <g transform="translate(25 24) scale(.88)">
+    <path d="M188 181C171 198 149 207 124 207C77 207 39 170 39 123C39 76 77 39 124 39C171 39 209 76 209 123C209 139 205 154 197 167" stroke="#081D2D" stroke-width="34" stroke-linecap="round"/>
+    <path d="M30 96C67 83 102 86 133 103C151 113 168 116 185 112" stroke="#9FD3C6" stroke-width="11" stroke-linecap="round"/>
+    <path d="M27 120C65 108 101 111 132 127C151 137 168 140 187 136" stroke="#F5F6F3" stroke-width="11" stroke-linecap="round"/>
+    <path d="M31 145C66 134 101 137 131 151C151 161 169 165 188 161" stroke="#9FD3C6" stroke-width="11" stroke-linecap="round"/>
+    <path d="M165 166C182 173 205 190 229 217L190 215C179 198 169 183 153 175L165 166Z" fill="#FF6B4A"/>
+  </g>
+  <g transform="translate(300 67) skewX(-10)" fill="#081D2D">
+    <path fill-rule="evenodd" d="M18 0H66Q84 0 84 18V82Q84 100 66 100H18Q0 100 0 82V18Q0 0 18 0ZM25 21Q20 21 20 26V74Q20 79 25 79H59Q64 79 64 74V26Q64 21 59 21H25Z"/>
+    <path d="M49 68L88 104H61L36 78L49 68Z"/>
+    <path d="M100 0H120V72Q120 80 129 80H158Q167 80 167 72V0H187V76Q187 100 163 100H124Q100 100 100 76V0Z"/>
+    <path d="M203 0H223V100H203V0Z"/>
+    <path fill-rule="evenodd" d="M240 0H300Q324 0 324 24V42Q324 66 300 66H260V100H240V0ZM260 20V46H295Q304 46 304 37V29Q304 20 295 20H260Z"/>
+    <path fill-rule="evenodd" d="M340 0H400Q424 0 424 24V40Q424 58 408 64L433 100H407L385 66H360V100H340V0ZM360 20V46H395Q404 46 404 37V29Q404 20 395 20H360Z"/>
+    <path fill-rule="evenodd" d="M477 0H500L535 100H513L505 78H468L460 100H438L477 0ZM475 59H499L488 24L475 59Z"/>
+    <path d="M550 0H570V100H550V0Z"/>
+    <path fill-rule="evenodd" d="M624 0H647L682 100H660L652 78H615L607 100H585L624 0ZM622 59H646L635 24L622 59Z"/>
+  </g>
+  <text x="305" y="215" fill="#081D2D" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="8">QUAL PRAIA HOJE?</text>
+  <text x="307" y="254" fill="#6E8FA6" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="5">SWELL · MARÉ · VENTO</text>
+  <rect x="305" y="273" width="102" height="7" rx="3.5" fill="#9FD3C6"/>
+  <rect x="415" y="273" width="34" height="7" rx="3.5" fill="#FF6B4A"/>
+</svg>

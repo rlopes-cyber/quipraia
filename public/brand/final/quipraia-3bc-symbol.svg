@@ -1,0 +1,9 @@
+<svg width="512" height="512" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Símbolo QuiPraia 3BC</title>
+  <desc id="desc">Letra Q construída como um rail circular, atravessada por três canais que representam swell, maré e vento, com terminal coral inspirado em uma quilha.</desc>
+  <path d="M188 181C171 198 149 207 124 207C77 207 39 170 39 123C39 76 77 39 124 39C171 39 209 76 209 123C209 139 205 154 197 167" stroke="#081D2D" stroke-width="34" stroke-linecap="round"/>
+  <path d="M30 96C67 83 102 86 133 103C151 113 168 116 185 112" stroke="#9FD3C6" stroke-width="11" stroke-linecap="round"/>
+  <path d="M27 120C65 108 101 111 132 127C151 137 168 140 187 136" stroke="#F5F6F3" stroke-width="11" stroke-linecap="round"/>
+  <path d="M31 145C66 134 101 137 131 151C151 161 169 165 188 161" stroke="#9FD3C6" stroke-width="11" stroke-linecap="round"/>
+  <path d="M165 166C182 173 205 190 229 217L190 215C179 198 169 183 153 175L165 166Z" fill="#FF6B4A"/>
+</svg>
