@@ -1,0 +1,61 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">QuiPraia Design System v1</title>
+  <desc id="desc">Painel visual com marca 3C, cores, tipografia, componentes e gráficos de maré, swell e vento.</desc>
+  <rect width="1600" height="1000" fill="#F4F6F7"/>
+  <rect x="40" y="36" width="1520" height="168" rx="28" fill="#0B1D2D"/>
+  <g transform="translate(74 55) scale(.58)">
+    <path d="M42 34H152C184 34 205 56 205 88V131H171V91C171 76 162 68 147 68H88C69 68 58 79 58 98V111H24V91C24 58 49 34 82 34H42Z" fill="#F4F6F7"/>
+    <path d="M24 119H91C111 119 124 128 137 146L151 166H88C50 166 24 148 24 119Z" fill="#F4F6F7"/>
+    <path d="M14 78H88C98 78 104 74 111 67H50C32 67 21 71 14 78ZM8 94H91C102 94 110 89 118 82H42C24 82 14 87 8 94ZM12 110H94C105 110 115 105 123 98H44C27 98 18 103 12 110Z" fill="#0B1D2D"/>
+    <path d="M119 118C140 122 158 132 175 146L223 174H157C143 150 132 135 111 126L119 118Z" fill="#FF6B57"/>
+  </g>
+  <text x="220" y="112" fill="#F4F6F7" font-family="Sora, Arial" font-size="48" font-weight="700" font-style="italic">QUIPRAIA</text>
+  <text x="222" y="151" fill="#9FD3C6" font-family="Inter, Arial" font-size="17" font-weight="700" letter-spacing="5">DESIGN SYSTEM v1 · 3C PERFORMANCE</text>
+  <text x="1130" y="105" fill="#F4F6F7" font-family="Sora, Arial" font-size="28" font-weight="600">Qual praia hoje?</text>
+  <text x="1132" y="141" fill="#FF6B57" font-family="Inter, Arial" font-size="14" font-weight="700" letter-spacing="4">SWELL · MARÉ · VENTO</text>
+
+  <text x="40" y="255" fill="#0B1D2D" font-family="Sora, Arial" font-size="22" font-weight="700">FUNDAÇÕES</text>
+  <rect x="40" y="278" width="720" height="235" rx="20" fill="white" stroke="#D8E0E5"/>
+  <g font-family="Inter, Arial" font-size="13" fill="#52697B">
+    <circle cx="105" cy="351" r="34" fill="#0B1D2D"/><text x="70" y="408">Midnight</text><text x="70" y="429">#0B1D2D</text>
+    <circle cx="235" cy="351" r="34" fill="#F4F6F7" stroke="#D8E0E5"/><text x="210" y="408">Foam</text><text x="200" y="429">#F4F6F7</text>
+    <circle cx="365" cy="351" r="34" fill="#9FD3C6"/><text x="333" y="408">Seafoam</text><text x="330" y="429">#9FD3C6</text>
+    <circle cx="495" cy="351" r="34" fill="#FF6B57"/><text x="473" y="408">Coral</text><text x="460" y="429">#FF6B57</text>
+    <circle cx="625" cy="351" r="34" fill="#6B8194"/><text x="590" y="408">Silver Blue</text><text x="590" y="429">#6B8194</text>
+  </g>
+  <text x="70" y="477" fill="#0B1D2D" font-family="Sora, Arial" font-size="24" font-weight="700">Sora — decisões e métricas</text>
+  <text x="420" y="477" fill="#52697B" font-family="Inter, Arial" font-size="18">Inter — interface, dados e leitura longa</text>
+
+  <text x="800" y="255" fill="#0B1D2D" font-family="Sora, Arial" font-size="22" font-weight="700">COMPONENTES</text>
+  <rect x="800" y="278" width="760" height="235" rx="20" fill="white" stroke="#D8E0E5"/>
+  <rect x="830" y="312" width="174" height="48" rx="12" fill="#FF6B57"/><text x="867" y="342" fill="#0B1D2D" font-family="Inter, Arial" font-size="15" font-weight="700">VER CONDIÇÃO</text>
+  <rect x="1020" y="312" width="152" height="48" rx="12" fill="#0B1D2D"/><text x="1056" y="342" fill="#F4F6F7" font-family="Inter, Arial" font-size="15" font-weight="700">COMPARAR</text>
+  <rect x="1188" y="312" width="130" height="48" rx="12" fill="white" stroke="#0B1D2D"/><text x="1228" y="342" fill="#0B1D2D" font-family="Inter, Arial" font-size="15" font-weight="700">FILTRAR</text>
+  <text x="830" y="403" fill="#52697B" font-family="Inter, Arial" font-size="13" font-weight="600">SESSION PULSE · BOM</text>
+  <rect x="830" y="421" width="68" height="12" rx="6" fill="#9FD3C6"/><rect x="905" y="421" width="68" height="12" rx="6" fill="#9FD3C6"/><rect x="980" y="421" width="68" height="12" rx="6" fill="#9FD3C6"/><rect x="1055" y="421" width="68" height="12" rx="6" fill="#9FD3C6"/><rect x="1130" y="421" width="68" height="12" rx="6" fill="#D8E0E5"/>
+  <rect x="1245" y="390" width="280" height="92" rx="14" fill="#F4F6F7"/>
+  <text x="1265" y="419" fill="#0B1D2D" font-family="Sora, Arial" font-size="17" font-weight="700">Stella Maris</text><text x="1265" y="446" fill="#52697B" font-family="Inter, Arial" font-size="14">1,4 m · 11 s · ESE</text><text x="1265" y="469" fill="#FF6B57" font-family="Inter, Arial" font-size="12" font-weight="700">MELHOR 06:20–08:10</text>
+
+  <text x="40" y="566" fill="#0B1D2D" font-family="Sora, Arial" font-size="22" font-weight="700">DADOS DO MAR</text>
+  <rect x="40" y="590" width="480" height="350" rx="20" fill="white" stroke="#D8E0E5"/>
+  <text x="70" y="634" fill="#0B1D2D" font-family="Sora, Arial" font-size="20" font-weight="700">Maré</text><text x="70" y="662" fill="#52697B" font-family="Inter, Arial" font-size="14">0,8 m · enchendo</text>
+  <path d="M78 828C132 811 161 737 220 744C284 751 293 847 358 842C409 838 431 760 482 748" stroke="#57AFCB" stroke-width="6" stroke-linecap="round"/>
+  <path d="M78 828C132 811 161 737 220 744C284 751 293 847 358 842C409 838 431 760 482 748V885H78V828Z" fill="#57AFCB" fill-opacity=".12"/>
+  <line x1="266" y1="704" x2="266" y2="884" stroke="#FF6B57" stroke-width="3"/><circle cx="266" cy="811" r="7" fill="#FF6B57"/>
+  <g fill="#52697B" font-family="Inter, Arial" font-size="12"><text x="70" y="910">00h</text><text x="205" y="910">06h</text><text x="342" y="910">12h</text><text x="455" y="910">18h</text></g>
+
+  <rect x="540" y="590" width="480" height="350" rx="20" fill="white" stroke="#D8E0E5"/>
+  <text x="570" y="634" fill="#0B1D2D" font-family="Sora, Arial" font-size="20" font-weight="700">Ondas</text><text x="570" y="662" fill="#52697B" font-family="Inter, Arial" font-size="14">altura · período · direção</text>
+  <g fill="#9FD3C6"><rect x="580" y="784" width="42" height="78" rx="8"/><rect x="642" y="750" width="42" height="112" rx="8"/><rect x="704" y="716" width="42" height="146" rx="8"/><rect x="766" y="736" width="42" height="126" rx="8"/><rect x="828" y="768" width="42" height="94" rx="8"/></g>
+  <g fill="#F4B860"><circle cx="601" cy="751" r="7"/><circle cx="663" cy="716" r="9"/><circle cx="725" cy="680" r="12"/><circle cx="787" cy="701" r="10"/><circle cx="849" cy="736" r="8"/></g>
+  <path d="M914 790L953 750M953 750L943 776M953 750L927 760" stroke="#0B1D2D" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="895" y="832" fill="#0B1D2D" font-family="Sora, Arial" font-size="22" font-weight="700">ESE</text><text x="893" y="855" fill="#52697B" font-family="Inter, Arial" font-size="13">112°</text>
+  <g fill="#52697B" font-family="Inter, Arial" font-size="12"><text x="580" y="900">06h</text><text x="704" y="900">09h</text><text x="828" y="900">12h</text></g>
+
+  <rect x="1040" y="590" width="520" height="350" rx="20" fill="#0B1D2D"/>
+  <text x="1070" y="634" fill="#F4F6F7" font-family="Sora, Arial" font-size="20" font-weight="700">Vento</text><text x="1070" y="662" fill="#9FD3C6" font-family="Inter, Arial" font-size="14">terral fraco · rajadas 18 km/h</text>
+  <path d="M1080 815C1133 804 1164 730 1220 746C1271 760 1297 812 1350 786C1400 762 1440 721 1520 744" stroke="#6B8194" stroke-width="5" stroke-linecap="round"/>
+  <path d="M1080 780C1133 764 1164 696 1220 712C1271 726 1297 776 1350 750C1400 726 1440 687 1520 710" stroke="#9FD3C6" stroke-width="2" stroke-dasharray="7 8"/>
+  <g stroke="#F4F6F7" stroke-width="4" stroke-linecap="round"><path d="M1115 715L1140 690M1140 690L1132 709M1140 690L1121 698"/><path d="M1260 700L1285 675M1285 675L1277 694M1285 675L1266 683"/><path d="M1410 690L1435 665M1435 665L1427 684M1435 665L1416 673"/></g>
+  <text x="1070" y="883" fill="#FF6B57" font-family="Sora, Arial" font-size="26" font-weight="700">12 km/h</text><text x="1240" y="883" fill="#F4F6F7" font-family="Inter, Arial" font-size="14">NE · 42°</text><text x="1430" y="883" fill="#9FD3C6" font-family="Inter, Arial" font-size="13">agora</text>
+</svg>
