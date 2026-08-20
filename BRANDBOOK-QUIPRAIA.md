@@ -1,10 +1,10 @@
-# QuiPraia — direção de marca v1.0
+# QuiPraia — direção de marca 3C aprovada
 
 ## Ideia central
 
 **QuiPraia transforma a pergunta “qual praia hoje?” em uma decisão simples de sessão.**
 
-A referência visual de MAINE aponta para uma marca costeira minimalista, com o nome como protagonista, letras largas e uma sensação tátil de prancha. Para QuiPraia, a direção usa essa linguagem como inspiração de categoria, mas cria uma construção própria: wordmark dominante, símbolo em forma de prancha-Q, linha de rail, quilha e duas curvas que sugerem maré e rota entre praias.
+A direção 3C combina surf, desempenho e leitura das condições do mar. A marca usa um wordmark aerodinâmico e um símbolo compacto formado por `Q`, rail de prancha, três canais de dados e uma quilha coral. O resultado deve comunicar precisão sem perder a cultura do surf.
 
 ## Assinatura
 
@@ -16,40 +16,37 @@ Descrição: **Condições do mar para escolher melhor sua próxima sessão.**
 
 ## Conceito do logotipo
 
-- `qui` responde à pergunta e cria proximidade.
-- `praia` explica imediatamente o universo do produto.
-- A escala horizontal lembra uma prancha vista de cima.
-- A linha areia funciona como rail e linha de água.
-- A pequena ponta final funciona como quilha e seta de escolha: a próxima praia está adiante.
-- O símbolo compacto combina três ideias: `Q` de QuiPraia, shape de prancha e ondas de condição.
-- A marca deve continuar reconhecível sem símbolo, porque o nome é o principal ativo.
+- O `Q` inclinado é o elemento proprietário da marca.
+- O contorno principal lembra o rail e a seção lateral de uma prancha.
+- Os três cortes internos representam swell, maré e vento.
+- O terminal coral funciona como quilha, direção e decisão.
+- O wordmark comunica movimento controlado, leitura rápida e desempenho.
+- Símbolo e wordmark devem funcionar juntos ou separadamente.
 
 ## Construção tipográfica
 
-- Letras largas, pesadas e com cantos arredondados.
-- Compressão vertical sutil para lembrar o perfil baixo de uma prancha.
-- Espaçamento apertado, com aparência de wordmark desenhado.
-- `qui` em azul oceano.
-- `praia` em verde mar.
-- Linha areia abaixo do nome.
-- Nunca usar uma fonte cursiva no logotipo principal; o efeito de surf vem da geometria e do rail.
+- Letras geométricas, inclinadas e desenhadas para o wordmark.
+- Cortes diagonais controlados no `Q`, `P`, `R` e `A`.
+- Peso consistente e boa leitura em prancha, camiseta e interface.
+- Wordmark prioritariamente em Foam sobre Midnight ou Midnight sobre Foam.
+- Coral aparece apenas no recorte do `Q` ou em pequenos acentos.
+- Nunca substituir o wordmark por uma fonte digitada semelhante.
 
 ## Paleta
 
 | Nome | Hex | Função |
 |---|---|---|
-| Ocean Ink | `#062A4D` | Palavra principal, textos fortes e fundos escuros |
-| Reef Green | `#21A699` | `praia`, links e ações |
-| Sun Rail | `#F2C46B` | Linha, destaque e sinal de momento |
-| Foam | `#F6F3E9` | Fundo claro e contraste |
-| Coral | `#E67E62` | Atenção, alertas e moderação |
-| Mist | `#A9C8C3` | Bordas, áreas secundárias e estados neutros |
+| Midnight | `#0B1D2D` | Fundo principal, wordmark e alta legibilidade |
+| Foam | `#F4F6F7` | Logo invertido, superfícies e respiro |
+| Seafoam | `#9FD3C6` | Condições favoráveis e dados oceânicos |
+| Coral | `#FF6B57` | Quilha, ação e pontos de decisão |
+| Silver Blue | `#6B8194` | Informação secundária e estados neutros |
 
 ## Tipografia do produto
 
-- **DM Sans**: interface, dados, gráficos, navegação e formulários.
-- **Caveat Brush**: chamadas editoriais, campanhas e apenas uma palavra em headlines.
-- **Wordmark QuiPraia**: desenho próprio do logotipo; não deve depender de uma fonte instalada.
+- **Sora SemiBold**: títulos, métricas e chamadas técnicas.
+- **Inter Medium/Regular**: interface, dados, gráficos, navegação e formulários.
+- **Wordmark QuiPraia**: desenho proprietário; não depende de uma fonte instalada.
 
 ## Layout de marca
 
@@ -71,7 +68,7 @@ Descrição: **Condições do mar para escolher melhor sua próxima sessão.**
 
 ## Símbolo compacto
 
-O símbolo é uma prancha vertical que forma um `Q`, atravessada por duas linhas de maré e terminada por uma quilha. Ele representa a pergunta “qual praia?” e a comparação de condições entre pontos do litoral. Pode ser usado como:
+O símbolo 3C é um `Q` de perfil baixo e inclinado, atravessado por três canais e finalizado por uma quilha coral. Ele representa a leitura de swell, maré e vento antes da escolha da praia. Pode ser usado como:
 
 - favicon;
 - avatar;
@@ -120,4 +117,4 @@ A marca deve ser confiante, mas respeitar a incerteza natural da previsão e a e
 
 ## Status
 
-QuiPraia é a direção criativa atual. Antes do registro definitivo, verificar domínio, redes sociais, lojas de aplicativos e INPI.
+A direção **3C Performance** foi escolhida e aprovada pelo responsável pelo projeto. O brandboard aprovado é a referência visual oficial para o redesenho vetorial. O conceito 3BC permanece apenas como estudo arquivado. Antes do registro definitivo, verificar domínio, redes sociais, lojas de aplicativos e INPI.
