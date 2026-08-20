@@ -188,11 +188,15 @@ const beaches: Beach[] = [
 function Logo() {
   return (
     <a className="brand" href="#top">
-      <span className="ondai-logo-mark" aria-hidden="true">
+      <span className="surfcrew-logo-mark" aria-hidden="true">
+        <i />
         <i />
         <i />
       </span>
-      <span>ondai</span>
+      <span className="surfcrew-wordmark">
+        <b>surf</b>
+        <em>crew</em>
+      </span>
     </a>
   );
 }
@@ -299,8 +303,8 @@ function Landing({
             <em>Você se prepara.</em>
           </h1>
           <p>
-            O Ondai reúne maré, ondas, vento e relatos reais para ajudar você a
-            escolher melhor onde surfar.
+            O SurfCrew reúne maré, ondas, vento e relatos reais para ajudar você
+            a escolher melhor onde surfar.
           </p>
           <button className="hero-cta" onClick={onSignup}>
             Criar meu acesso gratuito <span>↗</span>
@@ -321,7 +325,7 @@ function Landing({
           <div className="photo-stamp">
             01
             <br />
-            <small>ONDAI</small>
+            <small>SURFCREW</small>
           </div>
         </div>
       </section>
@@ -341,7 +345,7 @@ function Landing({
       </section>
       <section className="value-section" id="como-funciona">
         <div className="section-intro">
-          <span className="eyebrow">POR QUE ONDAI?</span>
+          <span className="eyebrow">POR QUE SURFCREW?</span>
           <h2>
             Menos achismo.
             <br />
@@ -536,7 +540,7 @@ function AuthScreen({
           </h1>
           <p>
             {currentMode === "signup"
-              ? "Crie seu acesso para acompanhar praias, salvar favoritos e participar da comunidade Ondai."
+              ? "Crie seu acesso para acompanhar praias, salvar favoritos e participar da comunidade SurfCrew."
               : "Entre para ver suas praias, seus relatos e as condições de hoje."}
           </p>
         </div>
@@ -544,7 +548,7 @@ function AuthScreen({
           <span className="card-kicker">
             {currentMode === "signup"
               ? "CRIAR ACESSO GRATUITO"
-              : "ENTRAR NO ONDAI"}
+              : "ENTRAR NO SURFCREW"}
           </span>
           <h2>
             {currentMode === "signup"
@@ -787,7 +791,7 @@ function Dashboard({ onLogout }: { onLogout: () => void }) {
         <div className="app-score">
           <b>{activeBeach.score}</b>
           <span>/100</span>
-          <small>índice Ondai</small>
+          <small>índice SurfCrew</small>
         </div>
       </section>
       <section className="condition-section">
@@ -1062,7 +1066,7 @@ function ProfileView({ onBack }: { onBack: () => void }) {
         <button className="back-profile" onClick={onBack}>
           ← voltar para condições
         </button>
-        <span className="eyebrow">MEU PERFIL · ONDAI</span>
+        <span className="eyebrow">MEU PERFIL · SURFCREW</span>
         <div className="profile-identity">
           <div className="profile-avatar">R</div>
           <div>

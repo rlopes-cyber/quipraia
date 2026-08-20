@@ -1,0 +1,88 @@
+.surfcrew-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  color: var(--ref-navy);
+}
+.surfcrew-wordmark b {
+  font-weight: 800;
+}
+.surfcrew-wordmark em {
+  font-style: normal;
+  color: var(--ref-teal);
+}
+.surfcrew-logo-mark {
+  position: relative;
+  display: inline-block;
+  width: 31px;
+  height: 31px;
+  margin-right: 8px;
+  border-radius: 11px;
+  background: var(--ref-navy);
+  vertical-align: -8px;
+  overflow: hidden;
+  transform: rotate(-5deg);
+}
+.surfcrew-logo-mark:before,
+.surfcrew-logo-mark:after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  border-radius: 50%;
+  border: 2px solid var(--ref-teal);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  height: 9px;
+  transform: rotate(-7deg);
+}
+.surfcrew-logo-mark:before {
+  bottom: 6px;
+}
+.surfcrew-logo-mark:after {
+  bottom: 11px;
+  border-color: #f7fafc;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+.surfcrew-logo-mark i {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--ref-sand);
+  top: 7px;
+  left: 8px;
+}
+.surfcrew-logo-mark i:nth-child(2) {
+  width: 3px;
+  height: 3px;
+  background: var(--ref-teal-bright);
+  top: 5px;
+  left: 16px;
+}
+.surfcrew-logo-mark i:nth-child(3) {
+  width: 3px;
+  height: 3px;
+  background: var(--ref-lime);
+  top: 8px;
+  left: 22px;
+}
+.landing .surfcrew-wordmark {
+  color: var(--ref-navy);
+}
+.auth-nav .surfcrew-wordmark,
+.admin-brand .surfcrew-wordmark {
+  color: #fff;
+}
+.admin-brand .surfcrew-logo-mark {
+  vertical-align: -8px;
+}
+.admin-login-card .surfcrew-wordmark {
+  color: var(--ref-navy);
+}
+.admin-login-card .surfcrew-logo-mark {
+  background: var(--ref-navy);
+}

@@ -1,0 +1,8 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Símbolo SurfCrew">
+  <rect x="10" y="10" width="236" height="236" rx="72" fill="#052B5C"/>
+  <circle cx="83" cy="82" r="15" fill="#F6C968"/>
+  <circle cx="133" cy="61" r="11" fill="#7CE0D2"/>
+  <circle cx="174" cy="89" r="9" fill="#9DDC36"/>
+  <path d="M45 148C80 110 117 111 153 143C177 164 200 168 215 151" stroke="#F7FAFC" stroke-width="16" stroke-linecap="round"/>
+  <path d="M44 174C87 140 129 144 162 170C184 187 203 188 217 177" stroke="#7CE0D2" stroke-width="9" stroke-linecap="round"/>
+</svg>
