@@ -4,7 +4,7 @@
 
 **QuiPraia transforma a pergunta “qual praia hoje?” em uma decisão simples de sessão.**
 
-A referência visual de MAINE aponta para uma marca costeira minimalista, com o nome como protagonista, letras largas e uma sensação tátil de prancha. Para QuiPraia, a direção usa essa linguagem como inspiração de categoria, mas cria uma construção própria: wordmark dominante, linha de rail, pequena quilha e uma curva que sugere maré.
+A referência visual de MAINE aponta para uma marca costeira minimalista, com o nome como protagonista, letras largas e uma sensação tátil de prancha. Para QuiPraia, a direção usa essa linguagem como inspiração de categoria, mas cria uma construção própria: wordmark dominante, símbolo em forma de prancha-Q, linha de rail, quilha e duas curvas que sugerem maré e rota entre praias.
 
 ## Assinatura
 
@@ -20,7 +20,8 @@ Descrição: **Condições do mar para escolher melhor sua próxima sessão.**
 - `praia` explica imediatamente o universo do produto.
 - A escala horizontal lembra uma prancha vista de cima.
 - A linha areia funciona como rail e linha de água.
-- A pequena ponta final funciona como quilha, sem desenhar uma prancha literal.
+- A pequena ponta final funciona como quilha e seta de escolha: a próxima praia está adiante.
+- O símbolo compacto combina três ideias: `Q` de QuiPraia, shape de prancha e ondas de condição.
 - A marca deve continuar reconhecível sem símbolo, porque o nome é o principal ativo.
 
 ## Construção tipográfica
@@ -70,7 +71,7 @@ Descrição: **Condições do mar para escolher melhor sua próxima sessão.**
 
 ## Símbolo compacto
 
-O símbolo é formado por um `Q` aberto, duas linhas de maré e uma quilha. Ele pode ser usado como:
+O símbolo é uma prancha vertical que forma um `Q`, atravessada por duas linhas de maré e terminada por uma quilha. Ele representa a pergunta “qual praia?” e a comparação de condições entre pontos do litoral. Pode ser usado como:
 
 - favicon;
 - avatar;

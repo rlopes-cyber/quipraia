@@ -1,11 +1,19 @@
-<svg width="620" height="170" viewBox="0 0 620 170" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<svg width="920" height="240" viewBox="0 0 920 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">QuiPraia</title>
-  <desc id="desc">Logotipo tipográfico QuiPraia com letras largas, arredondadas e linha inspirada no rail de uma prancha.</desc>
-  <g transform="translate(18 24) scale(1 .86)">
-    <text x="0" y="92" fill="#062A4D" font-family="Arial Rounded MT Bold, Arial Black, sans-serif" font-size="70" font-weight="900" letter-spacing="-5">qui</text>
-    <text x="127" y="92" fill="#21A699" font-family="Arial Rounded MT Bold, Arial Black, sans-serif" font-size="70" font-weight="900" letter-spacing="-5">praia</text>
+  <desc id="desc">Logo QuiPraia: wordmark de perfil baixo inspirado no shape de uma prancha, acompanhado da assinatura Qual praia hoje?</desc>
+  <g transform="translate(34 40)">
+    <rect width="132" height="154" rx="64" fill="#F6F3E9" stroke="#062A4D" stroke-width="8"/>
+    <path d="M66 20C39 20 21 41 21 72C21 104 38 126 62 129L87 150" stroke="#062A4D" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M66 20C93 20 111 41 111 72C111 104 94 126 70 129" stroke="#062A4D" stroke-width="13" stroke-linecap="round"/>
+    <path d="M-6 106C29 76 63 77 94 105C115 124 134 126 153 109" stroke="#21A699" stroke-width="9" stroke-linecap="round"/>
+    <path d="M-1 130C31 108 64 109 94 131C115 146 134 146 154 134" stroke="#F2C46B" stroke-width="6" stroke-linecap="round"/>
+    <path d="M138 126L158 134L144 146" fill="#062A4D"/>
   </g>
-  <path d="M142 131C198 113 250 116 299 132C365 153 443 151 510 127C536 118 558 117 581 124" stroke="#F2C46B" stroke-width="8" stroke-linecap="round"/>
-  <path d="M572 121L593 124L578 138" fill="#062A4D"/>
-  <path d="M91 51C91 41 99 33 109 33C119 33 127 41 127 51" stroke="#062A4D" stroke-width="5" stroke-linecap="round"/>
+  <g transform="translate(205 45) skewX(-3)">
+    <text x="0" y="112" fill="#062A4D" font-family="Arial Rounded MT Bold, Trebuchet MS, sans-serif" font-size="104" font-weight="900" letter-spacing="-8">qui</text>
+    <text x="185" y="112" fill="#21A699" font-family="Arial Rounded MT Bold, Trebuchet MS, sans-serif" font-size="104" font-weight="900" letter-spacing="-8">praia</text>
+  </g>
+  <path d="M218 181C331 154 427 157 513 181C622 211 741 205 841 165" stroke="#F2C46B" stroke-width="11" stroke-linecap="round"/>
+  <path d="M827 158L863 158L843 181" fill="#062A4D"/>
+  <text x="218" y="221" fill="#062A4D" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="4">QUAL PRAIA HOJE?</text>
 </svg>

@@ -1,7 +1,10 @@
-<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Símbolo QuiPraia">
-  <rect x="12" y="12" width="232" height="232" rx="72" fill="#062A4D"/>
-  <path d="M70 71C70 53 84 39 102 39C120 39 134 53 134 71C134 86 125 97 112 101L137 123" stroke="#F6F3E9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M51 148C81 121 113 122 143 145C167 164 191 167 209 151" stroke="#21A699" stroke-width="15" stroke-linecap="round"/>
-  <path d="M51 177C84 153 119 155 149 177C170 192 191 194 210 181" stroke="#F2C46B" stroke-width="8" stroke-linecap="round"/>
-  <path d="M193 176L215 181L201 196" fill="#F6F3E9"/>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Símbolo QuiPraia</title>
+  <desc id="desc">Uma prancha vertical formando a letra Q, com uma onda e uma quilha. Representa a escolha da praia e a leitura das condições do mar.</desc>
+  <rect width="512" height="512" rx="154" fill="#F6F3E9"/>
+  <path d="M256 55C164 55 99 128 99 225C99 319 157 381 234 389L305 457" stroke="#062A4D" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M256 55C348 55 413 128 413 225C413 319 355 381 278 389" stroke="#062A4D" stroke-width="42" stroke-linecap="round"/>
+  <path d="M72 300C142 238 215 238 278 295C327 339 375 344 438 300" stroke="#21A699" stroke-width="30" stroke-linecap="round"/>
+  <path d="M76 350C144 300 215 302 274 348C326 388 376 390 436 355" stroke="#F2C46B" stroke-width="17" stroke-linecap="round"/>
+  <path d="M405 342L449 355L418 384" fill="#062A4D"/>
 </svg>
