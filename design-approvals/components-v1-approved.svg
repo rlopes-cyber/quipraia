@@ -1,0 +1,167 @@
+<svg width="1600" height="1040" viewBox="0 0 1600 1040" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="80" y1="0" x2="1510" y2="1040" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1D2D"/>
+      <stop offset="1" stop-color="#102A3C"/>
+    </linearGradient>
+    <linearGradient id="photo" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#557F8A"/>
+      <stop offset="0.55" stop-color="#9FD3C6"/>
+      <stop offset="1" stop-color="#35566A"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#020A10" flood-opacity="0.25"/>
+    </filter>
+    <style>
+      .display { font-family: Sora, Inter, sans-serif; font-weight: 700; fill: #F4F6F7; }
+      .title { font-family: Sora, Inter, sans-serif; font-weight: 600; fill: #F4F6F7; }
+      .body { font-family: Inter, Arial, sans-serif; font-weight: 500; fill: #AFC0CD; }
+      .label { font-family: Inter, Arial, sans-serif; font-weight: 700; fill: #6B8194; letter-spacing: 1.6px; }
+      .data { font-family: Sora, Inter, sans-serif; font-weight: 700; fill: #F4F6F7; }
+      .line { stroke: #9FD3C6; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .border { stroke: #365064; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1040" fill="url(#bg)"/>
+  <circle cx="1480" cy="-30" r="300" fill="#9FD3C6" opacity="0.035"/>
+  <circle cx="80" cy="1040" r="280" fill="#FF6B57" opacity="0.035"/>
+
+  <image href="../public/brand/final/quipraia-3c-wordmark-dark-approved.svg" x="72" y="48" width="310" height="47"/>
+  <text x="72" y="146" class="display" font-size="40">Biblioteca de componentes</text>
+  <text x="72" y="180" class="body" font-size="16">QuiPraia UI 1.0 · extraída das telas mobile aprovadas</text>
+  <rect x="1362" y="58" width="166" height="38" rx="19" fill="#132F42" class="border"/>
+  <circle cx="1390" cy="77" r="5" fill="#9FD3C6"/>
+  <text x="1406" y="82" class="label" font-size="11" fill="#9FD3C6">ETAPA 4B</text>
+
+  <!-- Actions -->
+  <rect x="72" y="224" width="468" height="292" rx="24" fill="#102638" class="border" filter="url(#shadow)"/>
+  <text x="100" y="264" class="label" font-size="11">01 · AÇÕES</text>
+  <text x="100" y="300" class="title" font-size="22">Botões e estados</text>
+
+  <rect x="100" y="328" width="190" height="52" rx="14" fill="#FF6B57"/>
+  <text x="195" y="360" text-anchor="middle" class="title" font-size="15">Ver condições</text>
+  <rect x="306" y="328" width="190" height="52" rx="14" fill="none" stroke="#9FD3C6" stroke-width="1.5"/>
+  <text x="401" y="360" text-anchor="middle" class="title" font-size="15" fill="#9FD3C6">Comparar praias</text>
+
+  <rect x="100" y="396" width="190" height="46" rx="13" fill="#163146"/>
+  <text x="195" y="425" text-anchor="middle" class="title" font-size="14">Relatar condição</text>
+  <rect x="306" y="396" width="190" height="46" rx="13" fill="#163146" opacity="0.42"/>
+  <text x="401" y="425" text-anchor="middle" class="title" font-size="14" opacity="0.38">Indisponível</text>
+
+  <rect x="100" y="464" width="42" height="42" rx="12" fill="#163146"/>
+  <path d="M121 475v20M111 485h20" class="line"/>
+  <rect x="156" y="464" width="42" height="42" rx="21" fill="#FF6B57"/>
+  <path d="M168 485h18M177 476v18" stroke="#F4F6F7" stroke-width="2" stroke-linecap="round"/>
+  <text x="218" y="489" class="body" font-size="13">Ícone 42 · CTA 52 · raio 14</text>
+
+  <!-- Navigation -->
+  <rect x="566" y="224" width="962" height="292" rx="24" fill="#102638" class="border" filter="url(#shadow)"/>
+  <text x="594" y="264" class="label" font-size="11">02 · NAVEGAÇÃO</text>
+  <text x="594" y="300" class="title" font-size="22">Abas, filtros e barra inferior</text>
+
+  <rect x="594" y="328" width="906" height="48" rx="14" fill="#0B1D2D"/>
+  <rect x="600" y="334" width="146" height="36" rx="10" fill="#9FD3C6"/>
+  <text x="673" y="357" text-anchor="middle" font-family="Inter,Arial" font-size="13" font-weight="700" fill="#0B1D2D">Visão geral</text>
+  <text x="819" y="357" text-anchor="middle" class="body" font-size="13">Maré</text>
+  <text x="954" y="357" text-anchor="middle" class="body" font-size="13">Ondas</text>
+  <text x="1089" y="357" text-anchor="middle" class="body" font-size="13">Vento</text>
+  <text x="1240" y="357" text-anchor="middle" class="body" font-size="13">Relatos</text>
+
+  <rect x="594" y="398" width="906" height="94" rx="20" fill="#0B1D2D" stroke="#294458"/>
+  <g transform="translate(676 421)">
+    <path d="M0 15c6-10 14-10 20 0 6 10 14 10 20 0" class="line"/>
+    <text x="20" y="52" text-anchor="middle" class="title" font-size="12" fill="#9FD3C6">Hoje</text>
+    <circle cx="20" cy="64" r="2.5" fill="#FF6B57"/>
+  </g>
+  <g transform="translate(854 421)" opacity="0.7">
+    <path d="M7 4h26v28H7zM20 11c-5 0-8 7 0 15 8-8 5-15 0-15z" class="line"/>
+    <text x="20" y="52" text-anchor="middle" class="body" font-size="12">Mapa</text>
+  </g>
+  <g transform="translate(1032 421)" opacity="0.7">
+    <path d="M4 27h8V13H4v14zm12 0h8V5h-8v22zm12 0h8V17h-8v10z" class="line"/>
+    <text x="20" y="52" text-anchor="middle" class="body" font-size="12">Comparar</text>
+  </g>
+  <g transform="translate(1210 421)" opacity="0.7">
+    <circle cx="14" cy="13" r="7" class="line" fill="none"/><circle cx="29" cy="15" r="5" class="line" fill="none"/>
+    <path d="M2 31c3-9 21-9 24 0M24 28c3-6 13-5 15 1" class="line"/>
+    <text x="20" y="52" text-anchor="middle" class="body" font-size="12">Comunidade</text>
+  </g>
+  <g transform="translate(1388 421)" opacity="0.7">
+    <circle cx="20" cy="12" r="7" class="line" fill="none"/><path d="M7 32c2-12 24-12 26 0" class="line"/>
+    <text x="20" y="52" text-anchor="middle" class="body" font-size="12">Perfil</text>
+  </g>
+
+  <!-- Data cards -->
+  <rect x="72" y="542" width="930" height="426" rx="24" fill="#102638" class="border" filter="url(#shadow)"/>
+  <text x="100" y="582" class="label" font-size="11">03 · DADOS E CONDIÇÃO</text>
+  <text x="100" y="618" class="title" font-size="22">Cards modulares, leitura em 3 segundos</text>
+
+  <rect x="100" y="648" width="260" height="142" rx="18" fill="#0B1D2D" stroke="#294458"/>
+  <path d="M126 684c8-13 18-13 27 0 8 12 18 12 27 0" class="line"/>
+  <text x="126" y="718" class="label" font-size="10">ONDAS</text>
+  <text x="126" y="758" class="data" font-size="34">1.6</text><text x="193" y="758" class="body" font-size="15">m</text>
+  <path d="M246 751c16-27 34-21 47-39 10-14 22-11 37-24" stroke="#9FD3C6" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <circle cx="330" cy="688" r="4" fill="#FF6B57"/>
+
+  <rect x="376" y="648" width="260" height="142" rx="18" fill="#0B1D2D" stroke="#294458"/>
+  <circle cx="407" cy="682" r="12" class="line" fill="none"/><path d="M407 674v9l6 4" class="line"/>
+  <text x="402" y="718" class="label" font-size="10">PERÍODO</text>
+  <text x="402" y="758" class="data" font-size="34">11</text><text x="447" y="758" class="body" font-size="15">s</text>
+  <rect x="526" y="706" width="82" height="28" rx="14" fill="#173A46"/>
+  <text x="567" y="724" text-anchor="middle" font-family="Inter,Arial" font-size="11" font-weight="700" fill="#9FD3C6">CONSISTENTE</text>
+
+  <rect x="652" y="648" width="322" height="142" rx="18" fill="#0B1D2D" stroke="#294458"/>
+  <path d="M678 675h31c8 0 8 12 0 12h-18M678 695h43c8 0 8 12 0 12h-9" class="line"/>
+  <text x="678" y="736" class="label" font-size="10">VENTO</text>
+  <text x="678" y="770" class="data" font-size="30">14</text><text x="720" y="770" class="body" font-size="14">km/h</text>
+  <text x="830" y="747" class="title" font-size="14">Leste</text>
+  <text x="830" y="770" class="body" font-size="12">rajadas 19 km/h</text>
+
+  <text x="100" y="834" class="label" font-size="10">SESSION PULSE</text>
+  <g transform="translate(100 852)">
+    <rect width="520" height="8" rx="4" fill="#173146"/>
+    <rect width="100" height="8" rx="4" fill="#9FD3C6"/><rect x="105" width="100" height="8" rx="4" fill="#9FD3C6"/>
+    <rect x="210" width="100" height="8" rx="4" fill="#9FD3C6"/><rect x="315" width="100" height="8" rx="4" fill="#9FD3C6" opacity="0.65"/>
+    <rect x="420" width="100" height="8" rx="4" fill="#9FD3C6" opacity="0.32"/>
+  </g>
+  <rect x="642" y="838" width="108" height="36" rx="18" fill="#173A46"/>
+  <circle cx="665" cy="856" r="5" fill="#9FD3C6"/>
+  <text x="680" y="861" class="title" font-size="12" fill="#9FD3C6">Bom</text>
+  <text x="780" y="851" class="body" font-size="12">Melhor janela</text>
+  <text x="780" y="872" class="title" font-size="17">06:20–08:10</text>
+
+  <rect x="100" y="902" width="874" height="42" rx="12" fill="#0B1D2D"/>
+  <rect x="106" y="908" width="117" height="30" rx="9" fill="#9FD3C6"/>
+  <text x="165" y="928" text-anchor="middle" font-family="Inter,Arial" font-size="12" font-weight="700" fill="#0B1D2D">Agora</text>
+  <text x="310" y="928" text-anchor="middle" class="body" font-size="12">+3h</text><text x="470" y="928" text-anchor="middle" class="body" font-size="12">+6h</text>
+  <text x="630" y="928" text-anchor="middle" class="body" font-size="12">+9h</text><text x="856" y="928" text-anchor="middle" class="body" font-size="12">+12h</text>
+
+  <!-- Content / community -->
+  <rect x="1028" y="542" width="500" height="426" rx="24" fill="#102638" class="border" filter="url(#shadow)"/>
+  <text x="1056" y="582" class="label" font-size="11">04 · CONTEÚDO E COMUNIDADE</text>
+  <text x="1056" y="618" class="title" font-size="22">Praia, relato e anúncio</text>
+
+  <rect x="1056" y="648" width="444" height="126" rx="18" fill="url(#photo)"/>
+  <path d="M1056 740c64-34 126-38 189-7 59 29 118 25 255-28v69h-444z" fill="#0B1D2D" opacity="0.78"/>
+  <text x="1080" y="704" class="title" font-size="20">Stella Maris</text>
+  <text x="1080" y="730" class="body" font-size="12" fill="#F4F6F7">Salvador · 3,4 km</text>
+  <rect x="1365" y="670" width="106" height="32" rx="16" fill="#0B1D2D" opacity="0.9"/>
+  <circle cx="1387" cy="686" r="5" fill="#9FD3C6"/>
+  <text x="1401" y="690" class="title" font-size="12">Bom</text>
+
+  <rect x="1056" y="792" width="444" height="64" rx="16" fill="#0B1D2D" stroke="#294458"/>
+  <circle cx="1088" cy="824" r="17" fill="#173A46"/>
+  <path d="M1079 827c6-10 12-10 18 0" class="line"/>
+  <text x="1120" y="818" class="title" font-size="13">12 surfistas confirmaram</text>
+  <text x="1120" y="839" class="body" font-size="12">Atualizado há 8 min</text>
+  <path d="M1474 817l7 7-7 7" class="line"/>
+
+  <rect x="1056" y="874" width="444" height="70" rx="16" fill="#132F42" stroke="#FF6B57" stroke-opacity="0.55" stroke-dasharray="5 5"/>
+  <text x="1080" y="902" class="label" font-size="10" fill="#FF6B57">ESPAÇO PARCEIRO</text>
+  <text x="1080" y="926" class="title" font-size="14">Anuncie aqui. Fortaleça o movimento surf.</text>
+  <path d="M1460 904h16M1469 895l9 9-9 9" stroke="#FF6B57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="72" y="1008" class="body" font-size="12">Regra-mãe: uma função, um componente, uma leitura visual. Estados usam cor + forma + texto — nunca apenas cor.</text>
+  <text x="1528" y="1008" text-anchor="end" class="label" font-size="10">CANDIDATO À APROVAÇÃO</text>
+</svg>
