@@ -1,0 +1,67 @@
+<svg width="1600" height="1120" viewBox="0 0 1600 1120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="1120"><stop stop-color="#0B1D2D"/><stop offset="1" stop-color="#102A3C"/></linearGradient>
+    <linearGradient id="mapSea" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#113246"/><stop offset="1" stop-color="#0A2231"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dy="12" stdDeviation="16" flood-color="#020A10" flood-opacity=".28"/></filter>
+    <clipPath id="thumb1"><rect x="108" y="757" width="164" height="78" rx="12"/></clipPath>
+    <style>.display{font-family:Sora,Inter,sans-serif;font-weight:700;fill:#F4F6F7}.title{font-family:Sora,Inter,sans-serif;font-weight:600;fill:#F4F6F7}.body{font-family:Inter,Arial,sans-serif;font-weight:500;fill:#AFC0CD}.label{font-family:Inter,Arial,sans-serif;font-weight:700;fill:#6B8194;letter-spacing:1.4px}.data{font-family:Sora,Inter,sans-serif;font-weight:700;fill:#F4F6F7}.border{stroke:#365064;stroke-width:1}.line{stroke:#9FD3C6;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}</style>
+  </defs>
+  <rect width="1600" height="1120" fill="url(#bg)"/><circle cx="1510" cy="-40" r="320" fill="#9FD3C6" opacity=".035"/>
+  <image href="../public/brand/final/quipraia-3c-wordmark-dark-approved.svg" x="72" y="42" width="276" height="42"/>
+  <text x="72" y="134" class="display" font-size="38">Núcleo funcional</text><text x="72" y="166" class="body" font-size="15">Mapa, comparação, comunidade e perfil · quatro áreas conectadas pelos mesmos dados.</text>
+  <rect x="1368" y="51" width="160" height="38" rx="19" fill="#132F42" class="border"/><circle cx="1395" cy="70" r="5" fill="#9FD3C6"/><text x="1411" y="75" class="label" font-size="10">CORE 1.0</text>
+
+  <!-- MAP -->
+  <rect x="72" y="206" width="716" height="420" rx="26" fill="#102638" class="border" filter="url(#shadow)"/>
+  <text x="100" y="244" class="label" font-size="10">01 · MAPA DE SESSÕES</text><text x="100" y="280" class="title" font-size="22">Salvador · agora</text>
+  <rect x="100" y="302" width="412" height="294" rx="18" fill="url(#mapSea)" stroke="#294458"/>
+  <path d="M450 302C428 334 440 362 416 389C394 415 411 442 382 469C355 494 367 526 330 550C302 568 280 579 260 596H512V302Z" fill="#243D3D"/>
+  <path d="M450 302C428 334 440 362 416 389C394 415 411 442 382 469C355 494 367 526 330 550C302 568 280 579 260 596" stroke="#9FD3C6" stroke-width="2" opacity=".65"/>
+  <path d="M120 344l70-18M120 392l110-24M120 448l135-20M120 510l110-15M120 558l90-7" stroke="#294458" stroke-width="1" opacity=".7"/>
+  <g>
+    <circle cx="429" cy="332" r="10" fill="#173A46" stroke="#9FD3C6"/><circle cx="429" cy="332" r="4" fill="#9FD3C6"/><text x="410" y="326" text-anchor="end" class="body" font-size="9">Flamengo</text>
+    <circle cx="421" cy="363" r="12" fill="#FF6B57" stroke="#F4F6F7"/><text x="421" y="367" text-anchor="middle" class="title" font-size="9">B</text><text x="400" y="361" text-anchor="end" class="title" font-size="10">Stella Maris</text>
+    <circle cx="405" cy="402" r="10" fill="#173A46" stroke="#9FD3C6"/><circle cx="405" cy="402" r="4" fill="#9FD3C6"/><text x="385" y="399" text-anchor="end" class="body" font-size="9">Itapuã</text>
+    <circle cx="397" cy="437" r="9" fill="#173A46" stroke="#6B8194"/><text x="379" y="434" text-anchor="end" class="body" font-size="9">Piatã</text>
+    <circle cx="376" cy="472" r="10" fill="#173A46" stroke="#9FD3C6"/><circle cx="376" cy="472" r="4" fill="#9FD3C6"/><text x="357" y="469" text-anchor="end" class="body" font-size="9">Jaguaribe</text>
+    <circle cx="356" cy="505" r="9" fill="#173A46" stroke="#6B8194"/><text x="337" y="502" text-anchor="end" class="body" font-size="9">Pituaçu</text>
+    <circle cx="327" cy="541" r="9" fill="#173A46" stroke="#6B8194"/><text x="308" y="538" text-anchor="end" class="body" font-size="9">Boca do Rio</text>
+    <circle cx="286" cy="574" r="9" fill="#173A46" stroke="#6B8194"/><text x="267" y="571" text-anchor="end" class="body" font-size="9">Barra</text>
+  </g>
+  <rect x="526" y="302" width="234" height="294" rx="18" fill="#0B1D2D" stroke="#294458"/>
+  <text x="548" y="334" class="label" font-size="9">SELECIONADA</text><text x="548" y="366" class="title" font-size="18">Stella Maris</text>
+  <rect x="548" y="388" width="92" height="28" rx="14" fill="#173A46"/><circle cx="568" cy="402" r="4" fill="#9FD3C6"/><text x="580" y="406" class="title" font-size="10">Bom</text>
+  <text x="548" y="452" class="label" font-size="8">ONDAS</text><text x="548" y="478" class="data" font-size="23">1.6 m</text><text x="657" y="452" class="label" font-size="8">PERÍODO</text><text x="657" y="478" class="data" font-size="23">11 s</text>
+  <text x="548" y="516" class="label" font-size="8">VENTO</text><text x="548" y="542" class="title" font-size="14">L · 14 km/h</text><text x="657" y="516" class="label" font-size="8">MARÉ</text><text x="657" y="542" class="title" font-size="14">0.6 m ↑</text>
+  <rect x="548" y="558" width="190" height="26" rx="9" fill="#FF6B57"/><text x="643" y="575" text-anchor="middle" class="title" font-size="10">Abrir praia</text>
+
+  <!-- COMPARE -->
+  <rect x="812" y="206" width="716" height="420" rx="26" fill="#102638" class="border" filter="url(#shadow)"/>
+  <text x="840" y="244" class="label" font-size="10">02 · COMPARAR PRAIAS</text><text x="840" y="280" class="title" font-size="22">Mesma hora, praias diferentes</text>
+  <rect x="840" y="302" width="660" height="42" rx="12" fill="#0B1D2D"/><rect x="846" y="308" width="124" height="30" rx="9" fill="#9FD3C6"/><text x="908" y="328" text-anchor="middle" font-family="Inter,Arial" font-size="11" font-weight="700" fill="#0B1D2D">Agora</text><text x="1090" y="328" text-anchor="middle" class="body" font-size="11">+3h</text><text x="1250" y="328" text-anchor="middle" class="body" font-size="11">+6h</text><text x="1424" y="328" text-anchor="middle" class="body" font-size="11">+12h</text>
+  <g>
+    <rect x="840" y="360" width="204" height="236" rx="18" fill="#0B1D2D" stroke="#9FD3C6"/><text x="860" y="390" class="title" font-size="15">Stella Maris</text><rect x="947" y="375" width="74" height="26" rx="13" fill="#173A46"/><text x="984" y="392" text-anchor="middle" class="title" font-size="9" fill="#9FD3C6">MELHOR</text><path d="M860 429h38M866 427c5-18 14-28 25-28 12 0 19 9 17 19-5-6-10-6-14-2-5 5-1 11 9 11" class="line"/><text x="860" y="463" class="data" font-size="27">1.6 m</text><text x="860" y="488" class="body" font-size="10">11 s · SE</text><text x="860" y="525" class="body" font-size="10">Vento L · 14 km/h</text><text x="860" y="548" class="body" font-size="10">Maré 0.6 m subindo</text><rect x="860" y="564" width="164" height="7" rx="3" fill="#213A4A"/><rect x="860" y="564" width="125" height="7" rx="3" fill="#9FD3C6"/>
+    <rect x="1054" y="360" width="204" height="236" rx="18" fill="#0B1D2D" stroke="#294458"/><text x="1074" y="390" class="title" font-size="15">Flamengo</text><path d="M1074 429h38M1080 427c5-18 14-28 25-28 12 0 19 9 17 19-5-6-10-6-14-2-5 5-1 11 9 11" class="line"/><text x="1074" y="463" class="data" font-size="27">1.4 m</text><text x="1074" y="488" class="body" font-size="10">10 s · SE</text><text x="1074" y="525" class="body" font-size="10">Vento L · 12 km/h</text><text x="1074" y="548" class="body" font-size="10">Maré 0.7 m subindo</text><rect x="1074" y="564" width="164" height="7" rx="3" fill="#213A4A"/><rect x="1074" y="564" width="106" height="7" rx="3" fill="#9FD3C6"/>
+    <rect x="1268" y="360" width="232" height="236" rx="18" fill="#0B1D2D" stroke="#294458"/><text x="1288" y="390" class="title" font-size="15">Jaguaribe</text><path d="M1288 429h38M1294 427c5-18 14-28 25-28 12 0 19 9 17 19-5-6-10-6-14-2-5 5-1 11 9 11" class="line"/><text x="1288" y="463" class="data" font-size="27">1.3 m</text><text x="1288" y="488" class="body" font-size="10">9 s · ESE</text><text x="1288" y="525" class="body" font-size="10">Vento NE · 13 km/h</text><text x="1288" y="548" class="body" font-size="10">Maré 0.5 m subindo</text><rect x="1288" y="564" width="190" height="7" rx="3" fill="#213A4A"/><rect x="1288" y="564" width="109" height="7" rx="3" fill="#9FD3C6"/>
+  </g>
+
+  <!-- COMMUNITY -->
+  <rect x="72" y="654" width="716" height="398" rx="26" fill="#102638" class="border" filter="url(#shadow)"/>
+  <text x="100" y="692" class="label" font-size="10">03 · COMUNIDADE</text><text x="100" y="728" class="title" font-size="22">Relatos de quem está na água</text>
+  <rect x="596" y="680" width="164" height="42" rx="13" fill="#FF6B57"/><text x="678" y="706" text-anchor="middle" class="title" font-size="11">Relatar condição</text>
+  <rect x="100" y="754" width="660" height="82" rx="17" fill="#0B1D2D" stroke="#294458"/><circle cx="130" cy="781" r="17" fill="#173A46"/><text x="130" y="786" text-anchor="middle" class="title" font-size="10">MB</text><text x="158" y="778" class="title" font-size="12">Marina · Stella Maris</text><text x="158" y="798" class="body" font-size="10">há 8 min · “Entrando limpo, vento ainda fraco.”</text><rect x="644" y="770" width="92" height="28" rx="14" fill="#173A46"/><circle cx="664" cy="784" r="4" fill="#9FD3C6"/><text x="676" y="788" class="title" font-size="9">CONFIRMA</text><text x="158" y="820" class="body" font-size="9">1.5 m · boa formação · lotação média</text>
+  <rect x="100" y="850" width="660" height="82" rx="17" fill="#0B1D2D" stroke="#294458"/><circle cx="130" cy="877" r="17" fill="#173A46"/><text x="130" y="882" text-anchor="middle" class="title" font-size="10">JL</text><text x="158" y="874" class="title" font-size="12">João · Praia do Flamengo</text><text x="158" y="894" class="body" font-size="10">há 21 min · “Séries demoradas, mas abrindo bem.”</text><rect x="644" y="866" width="92" height="28" rx="14" fill="#173A46"/><circle cx="664" cy="880" r="4" fill="#9FD3C6"/><text x="676" y="884" class="title" font-size="9">CONFIRMA</text><text x="158" y="916" class="body" font-size="9">1.3 m · regular · pouca gente</text>
+  <rect x="100" y="946" width="660" height="78" rx="17" fill="#132F42" stroke="#FF6B57" stroke-opacity=".5" stroke-dasharray="5 5"/><text x="124" y="976" class="label" font-size="9" fill="#FF6B57">ANUNCIE AQUI</text><text x="124" y="1000" class="title" font-size="12">Fortaleça o movimento surf.</text><path d="M715 980h18m-7-7 7 7-7 7" stroke="#FF6B57" stroke-width="2"/>
+
+  <!-- PROFILE -->
+  <rect x="812" y="654" width="716" height="398" rx="26" fill="#102638" class="border" filter="url(#shadow)"/>
+  <text x="840" y="692" class="label" font-size="10">04 · PERFIL</text><text x="840" y="728" class="title" font-size="22">Preferências e participação</text>
+  <circle cx="884" cy="784" r="42" fill="#173A46" stroke="#9FD3C6"/><text x="884" y="793" text-anchor="middle" class="title" font-size="20">RL</text><text x="944" y="772" class="title" font-size="18">Ricardo Lopes</text><text x="944" y="798" class="body" font-size="11">Intermediário · Salvador, BA</text><rect x="944" y="812" width="112" height="28" rx="14" fill="#173A46"/><circle cx="964" cy="826" r="4" fill="#9FD3C6"/><text x="976" y="830" class="title" font-size="9">COLABORADOR</text>
+  <rect x="1240" y="748" width="260" height="92" rx="17" fill="#0B1D2D" stroke="#294458"/><text x="1262" y="775" class="label" font-size="8">SEU PLANO</text><text x="1262" y="802" class="title" font-size="15">R$ 9,90/mês</text><text x="1262" y="824" class="body" font-size="10">Renova em 20 set.</text><text x="1478" y="803" text-anchor="end" class="title" font-size="10" fill="#9FD3C6">Gerenciar</text>
+  <text x="840" y="882" class="label" font-size="9">PRAIAS FAVORITAS</text>
+  <rect x="840" y="900" width="206" height="60" rx="15" fill="#0B1D2D" stroke="#9FD3C6"/><text x="860" y="926" class="title" font-size="12">Stella Maris</text><text x="860" y="946" class="body" font-size="9">Alertas ativos</text><circle cx="1018" cy="930" r="6" fill="#9FD3C6"/>
+  <rect x="1058" y="900" width="206" height="60" rx="15" fill="#0B1D2D" stroke="#294458"/><text x="1078" y="926" class="title" font-size="12">Flamengo</text><text x="1078" y="946" class="body" font-size="9">Favorita</text><circle cx="1236" cy="930" r="6" fill="#6B8194"/>
+  <rect x="1276" y="900" width="224" height="60" rx="15" fill="#0B1D2D" stroke="#294458"/><text x="1296" y="926" class="title" font-size="12">Itapuã</text><text x="1296" y="946" class="body" font-size="9">Favorita</text><circle cx="1472" cy="930" r="6" fill="#6B8194"/>
+  <rect x="840" y="978" width="660" height="46" rx="14" fill="#0B1D2D" stroke="#294458"/><text x="862" y="1006" class="body" font-size="11">Notificações de melhor janela</text><rect x="1442" y="990" width="40" height="22" rx="11" fill="#173A46"/><circle cx="1470" cy="1001" r="8" fill="#9FD3C6"/>
+  <text x="72" y="1090" class="body" font-size="11">Mapa usa posição geográfica real; marcadores mostram condição, não qualidade da água. Comparação permanece sincronizada por horário.</text><text x="1528" y="1090" text-anchor="end" class="label" font-size="9">CANDIDATO À APROVAÇÃO</text>
+</svg>

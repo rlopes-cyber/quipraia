@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schemas.qui-praia.local/design-tokens/v1.json",
+  "meta": {
+    "brand": "QuiPraia",
+    "direction": "3C Performance",
+    "status": "locked",
+    "source": "approved visual foundations"
+  },
+  "color": {
+    "midnight": "#0B1D2D",
+    "midnightDeep": "#081824",
+    "surface": "#102638",
+    "surfaceRaised": "#132F42",
+    "surfaceInteractive": "#173A46",
+    "foam": "#F4F6F7",
+    "seafoam": "#9FD3C6",
+    "coral": "#FF6B57",
+    "silverBlue": "#6B8194",
+    "border": "#365064",
+    "borderSubtle": "#294458",
+    "textSecondary": "#AFC0CD"
+  },
+  "font": {
+    "display": "Sora",
+    "interface": "Inter",
+    "weight": { "medium": 500, "semibold": 600, "bold": 700 },
+    "size": { "label": 12, "body": 16, "h3": 20, "h2": 24, "h1": 36, "display": 48, "metric": 32 }
+  },
+  "space": { "1": 4, "2": 8, "3": 12, "4": 16, "6": 24, "8": 32, "12": 48 },
+  "radius": { "sm": 8, "md": 12, "lg": 16, "xl": 24, "pill": 999 },
+  "border": { "hairline": 1, "icon": 2 },
+  "motion": { "fast": 120, "standard": 200, "slow": 320, "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)" },
+  "layout": {
+    "mobile": { "min": 0, "max": 767, "columns": 4, "margin": 16, "gutter": 12 },
+    "tablet": { "min": 768, "max": 1199, "columns": 8, "margin": 24, "gutter": 16 },
+    "desktop": { "min": 1200, "columns": 12, "maxWidth": 1440, "margin": 32, "gutter": 24 }
+  }
+}

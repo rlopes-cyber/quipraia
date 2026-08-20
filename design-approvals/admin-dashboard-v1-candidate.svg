@@ -1,0 +1,64 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="1000"><stop stop-color="#0B1D2D"/><stop offset="1" stop-color="#102A3C"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dy="10" stdDeviation="14" flood-color="#020A10" flood-opacity=".25"/></filter>
+    <style>.display{font-family:Sora,Inter,sans-serif;font-weight:700;fill:#F4F6F7}.title{font-family:Sora,Inter,sans-serif;font-weight:600;fill:#F4F6F7}.body{font-family:Inter,Arial,sans-serif;font-weight:500;fill:#AFC0CD}.label{font-family:Inter,Arial,sans-serif;font-weight:700;fill:#6B8194;letter-spacing:1.4px}.data{font-family:Sora,Inter,sans-serif;font-weight:700;fill:#F4F6F7}.border{stroke:#365064;stroke-width:1}.line{stroke:#9FD3C6;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.nav{font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:600;fill:#8EA3B2}</style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <!-- sidebar -->
+  <rect width="238" height="1000" fill="#081824"/><image href="../public/brand/final/quipraia-3c-wordmark-dark-approved.svg" x="30" y="36" width="178" height="30"/><text x="30" y="96" class="label" font-size="9">PAINEL ADMINISTRATIVO</text>
+  <rect x="18" y="132" width="202" height="46" rx="13" fill="#173A46"/><path d="M40 153h8v8h-8zM53 145h8v16h-8zM66 150h8v11h-8z" class="line"/><text x="94" y="161" class="title" font-size="13" fill="#9FD3C6">Visão geral</text>
+  <path d="M40 211h30v26H40zM55 218c-5 0-8 6 0 14 8-8 5-14 0-14z" class="line" opacity=".7"/><text x="94" y="229" class="nav">Praias</text>
+  <circle cx="50" cy="286" r="7" class="line" fill="none" opacity=".7"/><circle cx="66" cy="288" r="5" class="line" fill="none" opacity=".7"/><path d="M39 304c3-10 20-10 23 0M60 301c3-6 12-5 14 1" class="line" opacity=".7"/><text x="94" y="300" class="nav">Usuários</text>
+  <rect x="40" y="348" width="32" height="28" rx="6" fill="none" stroke="#9FD3C6" opacity=".7"/><path d="M47 357h18M47 365h12" class="line" opacity=".7"/><text x="94" y="369" class="nav">Relatos</text><circle cx="202" cy="361" r="12" fill="#FF6B57"/><text x="202" y="365" text-anchor="middle" class="title" font-size="9">7</text>
+  <path d="M40 420h32v25H40zM46 414v12M66 414v12" class="line" opacity=".7"/><text x="94" y="438" class="nav">Anúncios</text>
+  <path d="M40 494h32M44 486v16M53 478v24M62 490v12M71 482v20" class="line" opacity=".7"/><text x="94" y="500" class="nav">Dados e APIs</text>
+  <circle cx="56" cy="562" r="15" fill="none" stroke="#9FD3C6" opacity=".7"/><path d="M56 552v20M46 562h20" class="line" opacity=".7"/><text x="94" y="568" class="nav">Configurações</text>
+  <rect x="18" y="870" width="202" height="104" rx="18" fill="#102638" stroke="#294458"/><circle cx="50" cy="906" r="18" fill="#173A46"/><text x="50" y="911" text-anchor="middle" class="title" font-size="11">RL</text><text x="79" y="902" class="title" font-size="12">Ricardo</text><text x="79" y="921" class="body" font-size="10">Administrador</text><circle cx="40" cy="948" r="4" fill="#9FD3C6"/><text x="52" y="952" class="body" font-size="9">Ambiente de teste</text>
+
+  <!-- header -->
+  <text x="278" y="54" class="label" font-size="10">QUINTA, 20 DE AGOSTO</text><text x="278" y="96" class="display" font-size="32">Operação QuiPraia</text><text x="278" y="124" class="body" font-size="13">Acompanhe conteúdo, comunidade, receita e integridade dos dados.</text>
+  <rect x="1228" y="45" width="184" height="44" rx="13" fill="#102638" stroke="#294458"/><circle cx="1253" cy="67" r="5" fill="#9FD3C6"/><text x="1267" y="71" class="title" font-size="11">Todos os sistemas</text>
+  <rect x="1426" y="45" width="102" height="44" rx="13" fill="#FF6B57"/><text x="1477" y="71" text-anchor="middle" class="title" font-size="11">Nova praia</text>
+
+  <!-- KPI cards -->
+  <g>
+    <rect x="278" y="158" width="288" height="126" rx="20" fill="#102638" class="border" filter="url(#shadow)"/><text x="302" y="190" class="label" font-size="8">USUÁRIOS CADASTRADOS</text><text x="302" y="238" class="data" font-size="36">1.248</text><rect x="458" y="206" width="84" height="28" rx="14" fill="#173A46"/><text x="500" y="224" text-anchor="middle" class="title" font-size="9" fill="#9FD3C6">+12% mês</text><text x="302" y="266" class="body" font-size="10">184 colaboradores ativos</text>
+    <rect x="582" y="158" width="288" height="126" rx="20" fill="#102638" class="border" filter="url(#shadow)"/><text x="606" y="190" class="label" font-size="8">PRAIAS PUBLICADAS</text><text x="606" y="238" class="data" font-size="36">10</text><text x="656" y="238" class="body" font-size="12">em Salvador</text><text x="606" y="266" class="body" font-size="10">10 com previsão atualizada</text><circle cx="838" cy="218" r="6" fill="#9FD3C6"/>
+    <rect x="886" y="158" width="288" height="126" rx="20" fill="#102638" class="border" filter="url(#shadow)"/><text x="910" y="190" class="label" font-size="8">RELATOS PENDENTES</text><text x="910" y="238" class="data" font-size="36">7</text><rect x="1062" y="206" width="88" height="28" rx="14" fill="#2B3036"/><text x="1106" y="224" text-anchor="middle" class="title" font-size="9" fill="#FFB49F">Revisar hoje</text><text x="910" y="266" class="body" font-size="10">2 sinalizados pela comunidade</text>
+    <rect x="1190" y="158" width="338" height="126" rx="20" fill="#102638" class="border" filter="url(#shadow)"/><text x="1214" y="190" class="label" font-size="8">RECEITA RECORRENTE</text><text x="1214" y="238" class="data" font-size="34">R$ 1.821</text><text x="1386" y="238" class="body" font-size="11">/ mês</text><text x="1214" y="266" class="body" font-size="10">Assinaturas · antes de taxas</text><path d="M1432 251c18-20 35-12 72-44" class="line" fill="none"/><circle cx="1504" cy="207" r="4" fill="#FF6B57"/>
+  </g>
+
+  <!-- API/Data health -->
+  <rect x="278" y="308" width="806" height="320" rx="24" fill="#102638" class="border" filter="url(#shadow)"/>
+  <text x="306" y="348" class="label" font-size="9">SAÚDE DOS DADOS</text><text x="306" y="382" class="title" font-size="21">Sincronização por praia</text><text x="1000" y="382" text-anchor="end" class="body" font-size="10">Atualização automática a cada 60 min</text>
+  <rect x="306" y="404" width="750" height="38" rx="10" fill="#0B1D2D"/><text x="324" y="428" class="label" font-size="8">PRAIA</text><text x="578" y="428" class="label" font-size="8">PREVISÃO</text><text x="736" y="428" class="label" font-size="8">MARÉ</text><text x="870" y="428" class="label" font-size="8">ÚLTIMA SINCRONIZAÇÃO</text>
+  <g class="body" font-size="10">
+    <text x="324" y="474">Stella Maris</text><circle cx="594" cy="470" r="5" fill="#9FD3C6"/><text x="609" y="474">Operacional</text><circle cx="752" cy="470" r="5" fill="#9FD3C6"/><text x="767" y="474">Operacional</text><text x="870" y="474">há 8 min</text>
+    <line x1="306" y1="490" x2="1056" y2="490" stroke="#294458"/><text x="324" y="520">Praia do Flamengo</text><circle cx="594" cy="516" r="5" fill="#9FD3C6"/><text x="609" y="520">Operacional</text><circle cx="752" cy="516" r="5" fill="#9FD3C6"/><text x="767" y="520">Operacional</text><text x="870" y="520">há 11 min</text>
+    <line x1="306" y1="536" x2="1056" y2="536" stroke="#294458"/><text x="324" y="566">Itapuã</text><circle cx="594" cy="562" r="5" fill="#9FD3C6"/><text x="609" y="566">Operacional</text><circle cx="752" cy="562" r="5" fill="#FF6B57"/><text x="767" y="566">Revisar</text><text x="870" y="566">há 54 min</text>
+  </g>
+  <rect x="306" y="586" width="164" height="28" rx="10" fill="#173146"/><text x="388" y="604" text-anchor="middle" class="title" font-size="9" fill="#9FD3C6">Ver todas as integrações</text>
+
+  <!-- moderation -->
+  <rect x="1108" y="308" width="420" height="320" rx="24" fill="#102638" class="border" filter="url(#shadow)"/>
+  <text x="1136" y="348" class="label" font-size="9">MODERAÇÃO</text><text x="1136" y="382" class="title" font-size="21">Fila de relatos</text>
+  <rect x="1136" y="404" width="364" height="82" rx="16" fill="#0B1D2D" stroke="#294458"/><circle cx="1163" cy="431" r="15" fill="#173A46"/><text x="1163" y="435" text-anchor="middle" class="title" font-size="9">AC</text><text x="1188" y="428" class="title" font-size="11">André · Itapuã</text><text x="1188" y="447" class="body" font-size="9">Foto sinalizada · há 12 min</text><rect x="1188" y="458" width="76" height="20" rx="8" fill="#173146"/><text x="1226" y="471" text-anchor="middle" class="title" font-size="8">Aprovar</text><text x="1284" y="471" class="body" font-size="8">Recusar</text>
+  <rect x="1136" y="498" width="364" height="82" rx="16" fill="#0B1D2D" stroke="#294458"/><circle cx="1163" cy="525" r="15" fill="#173A46"/><text x="1163" y="529" text-anchor="middle" class="title" font-size="9">GS</text><text x="1188" y="522" class="title" font-size="11">Gabi · Jaguaribe</text><text x="1188" y="541" class="body" font-size="9">Texto duplicado · há 31 min</text><rect x="1188" y="552" width="76" height="20" rx="8" fill="#173146"/><text x="1226" y="565" text-anchor="middle" class="title" font-size="8">Aprovar</text><text x="1284" y="565" class="body" font-size="8">Recusar</text>
+  <text x="1478" y="606" text-anchor="end" class="title" font-size="9" fill="#9FD3C6">Abrir fila completa →</text>
+
+  <!-- Ads -->
+  <rect x="278" y="652" width="554" height="286" rx="24" fill="#102638" class="border" filter="url(#shadow)"/>
+  <text x="306" y="692" class="label" font-size="9">ANÚNCIOS</text><text x="306" y="726" class="title" font-size="21">Campanhas ativas</text><rect x="690" y="680" width="114" height="34" rx="11" fill="#FF6B57"/><text x="747" y="701" text-anchor="middle" class="title" font-size="9">Nova campanha</text>
+  <rect x="306" y="752" width="498" height="66" rx="15" fill="#0B1D2D" stroke="#294458"/><text x="326" y="779" class="title" font-size="11">Loja local · Stella Maris</text><text x="326" y="799" class="body" font-size="9">Banner home + detalhe · 12–31 ago</text><rect x="708" y="770" width="72" height="26" rx="13" fill="#173A46"/><circle cx="727" cy="783" r="4" fill="#9FD3C6"/><text x="739" y="787" class="title" font-size="8">ATIVA</text>
+  <rect x="306" y="830" width="498" height="66" rx="15" fill="#0B1D2D" stroke="#294458"/><text x="326" y="857" class="title" font-size="11">Escola de surf · Flamengo</text><text x="326" y="877" class="body" font-size="9">Card de praia · 20 ago–10 set</text><rect x="696" y="848" width="84" height="26" rx="13" fill="#2B3036"/><text x="738" y="865" text-anchor="middle" class="body" font-size="8">AGENDADA</text>
+
+  <!-- Audit log -->
+  <rect x="856" y="652" width="672" height="286" rx="24" fill="#102638" class="border" filter="url(#shadow)"/>
+  <text x="884" y="692" class="label" font-size="9">ATIVIDADE</text><text x="884" y="726" class="title" font-size="21">Histórico operacional</text>
+  <line x1="910" y1="770" x2="910" y2="894" stroke="#294458" stroke-width="2"/>
+  <circle cx="910" cy="772" r="6" fill="#9FD3C6"/><text x="934" y="768" class="title" font-size="11">Praia atualizada</text><text x="934" y="788" class="body" font-size="9">Stella Maris · Ricardo · há 14 min</text>
+  <circle cx="910" cy="830" r="6" fill="#FF6B57"/><text x="934" y="826" class="title" font-size="11">Relato removido</text><text x="934" y="846" class="body" font-size="9">Violação das diretrizes · há 36 min</text>
+  <circle cx="910" cy="888" r="6" fill="#6B8194"/><text x="934" y="884" class="title" font-size="11">Campanha criada</text><text x="934" y="904" class="body" font-size="9">Escola de surf · há 2 h</text>
+  <text x="278" y="972" class="body" font-size="10">Ações administrativas exigem autenticação, autorização por função e registro de auditoria. Senhas nunca aparecem no painel.</text><text x="1528" y="972" text-anchor="end" class="label" font-size="9">CANDIDATO À APROVAÇÃO</text>
+</svg>

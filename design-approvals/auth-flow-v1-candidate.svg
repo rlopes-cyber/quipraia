@@ -1,0 +1,75 @@
+<svg width="1600" height="1040" viewBox="0 0 1600 1040" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="1040"><stop stop-color="#0B1D2D"/><stop offset="1" stop-color="#102A3C"/></linearGradient>
+    <filter id="shadow" x="-25%" y="-20%" width="150%" height="150%"><feDropShadow dy="16" stdDeviation="22" flood-color="#020A10" flood-opacity=".35"/></filter>
+    <style>
+      .display{font-family:Sora,Inter,sans-serif;font-weight:700;fill:#F4F6F7}.title{font-family:Sora,Inter,sans-serif;font-weight:600;fill:#F4F6F7}.body{font-family:Inter,Arial,sans-serif;font-weight:500;fill:#AFC0CD}.label{font-family:Inter,Arial,sans-serif;font-weight:700;fill:#6B8194;letter-spacing:1.4px}.input{font-family:Inter,Arial,sans-serif;font-weight:500;fill:#DCE5EA}.border{stroke:#365064;stroke-width:1}.line{stroke:#9FD3C6;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <rect width="1600" height="1040" fill="url(#bg)"/>
+  <circle cx="1470" cy="-50" r="320" fill="#9FD3C6" opacity=".035"/><circle cx="0" cy="1050" r="300" fill="#FF6B57" opacity=".035"/>
+  <image href="../public/brand/final/quipraia-3c-wordmark-dark-approved.svg" x="72" y="42" width="284" height="43"/>
+  <text x="72" y="135" class="display" font-size="38">Fluxo de acesso e primeiro uso</text>
+  <text x="72" y="168" class="body" font-size="15">Duas formas de entrar. Uma experiência personalizada desde a primeira sessão.</text>
+  <rect x="1370" y="52" width="158" height="38" rx="19" fill="#132F42" class="border"/><circle cx="1397" cy="71" r="5" fill="#9FD3C6"/><text x="1413" y="76" class="label" font-size="10">AUTH 1.0</text>
+
+  <!-- Frame 1 Login -->
+  <rect x="72" y="210" width="456" height="760" rx="30" fill="#102638" class="border" filter="url(#shadow)"/>
+  <text x="104" y="248" class="label" font-size="10">01 · ENTRAR</text>
+  <image href="../public/brand/final/quipraia-3c-wordmark-dark-approved.svg" x="104" y="282" width="190" height="30"/>
+  <text x="104" y="364" class="display" font-size="29">Que bom ter você de volta.</text>
+  <text x="104" y="392" class="body" font-size="13">Entre para ver as condições das suas praias.</text>
+  <rect x="104" y="426" width="392" height="52" rx="15" fill="#F4F6F7"/>
+  <circle cx="134" cy="452" r="13" fill="#FFFFFF" stroke="#D7E0E5"/><text x="134" y="457" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#4285F4">G</text>
+  <text x="300" y="458" text-anchor="middle" font-family="Inter,Arial" font-size="13" font-weight="700" fill="#0B1D2D">Continuar com Google</text>
+  <line x1="104" y1="512" x2="262" y2="512" stroke="#294458"/><line x1="338" y1="512" x2="496" y2="512" stroke="#294458"/><text x="300" y="516" text-anchor="middle" class="body" font-size="11">ou use seu e-mail</text>
+  <text x="104" y="554" class="label" font-size="9">E-MAIL</text>
+  <rect x="104" y="566" width="392" height="50" rx="13" fill="#0B1D2D" stroke="#365064"/>
+  <rect x="124" y="582" width="20" height="15" rx="3" fill="none" stroke="#6B8194" stroke-width="1.6"/><path d="M125 584l9 7 9-7" stroke="#6B8194" stroke-width="1.6"/><text x="158" y="597" class="input" font-size="12">voce@email.com</text>
+  <text x="104" y="650" class="label" font-size="9">SENHA</text>
+  <rect x="104" y="662" width="392" height="50" rx="13" fill="#0B1D2D" stroke="#365064"/>
+  <rect x="124" y="680" width="19" height="15" rx="3" fill="none" stroke="#6B8194" stroke-width="1.6"/><path d="M128 680v-5c0-7 11-7 11 0v5" stroke="#6B8194" stroke-width="1.6"/><text x="158" y="693" class="input" font-size="16">••••••••</text><path d="M456 681c8-7 16-7 24 0-8 7-16 7-24 0z" fill="none" stroke="#6B8194" stroke-width="1.4"/><circle cx="468" cy="681" r="3" fill="#6B8194"/>
+  <rect x="104" y="738" width="15" height="15" rx="4" fill="#173A46" stroke="#9FD3C6"/><path d="M108 746l3 3 5-7" stroke="#9FD3C6" stroke-width="1.5"/><text x="130" y="750" class="body" font-size="11">Manter conectado</text><text x="496" y="750" text-anchor="end" class="title" font-size="11" fill="#9FD3C6">Esqueci minha senha</text>
+  <rect x="104" y="780" width="392" height="54" rx="15" fill="#FF6B57"/><text x="300" y="813" text-anchor="middle" class="title" font-size="14">Entrar</text>
+  <text x="300" y="870" text-anchor="middle" class="body" font-size="12">Ainda não tem conta?</text><text x="300" y="894" text-anchor="middle" class="title" font-size="12" fill="#9FD3C6">Criar conta grátis</text>
+  <text x="300" y="938" text-anchor="middle" class="body" font-size="10">Ao entrar, você concorda com os Termos e a Privacidade.</text>
+
+  <!-- Frame 2 Create -->
+  <rect x="572" y="210" width="456" height="760" rx="30" fill="#102638" class="border" filter="url(#shadow)"/>
+  <text x="604" y="248" class="label" font-size="10">02 · CRIAR CONTA</text>
+  <image href="../public/brand/final/quipraia-3c-wordmark-dark-approved.svg" x="604" y="282" width="190" height="30"/>
+  <text x="604" y="354" class="display" font-size="29">Entre para a comunidade.</text>
+  <text x="604" y="382" class="body" font-size="13">Leva menos de um minuto.</text>
+  <rect x="604" y="412" width="392" height="50" rx="15" fill="#F4F6F7"/>
+  <circle cx="634" cy="437" r="13" fill="#FFFFFF" stroke="#D7E0E5"/><text x="634" y="442" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#4285F4">G</text><text x="800" y="442" text-anchor="middle" font-family="Inter,Arial" font-size="13" font-weight="700" fill="#0B1D2D">Cadastrar com Google</text>
+  <line x1="604" y1="492" x2="762" y2="492" stroke="#294458"/><line x1="838" y1="492" x2="996" y2="492" stroke="#294458"/><text x="800" y="496" text-anchor="middle" class="body" font-size="11">ou preencha</text>
+  <text x="604" y="530" class="label" font-size="9">NOME</text><rect x="604" y="542" width="392" height="48" rx="13" fill="#0B1D2D" stroke="#365064"/><text x="624" y="572" class="input" font-size="12">Como quer ser chamado?</text>
+  <text x="604" y="620" class="label" font-size="9">E-MAIL</text><rect x="604" y="632" width="392" height="48" rx="13" fill="#0B1D2D" stroke="#365064"/><text x="624" y="662" class="input" font-size="12">voce@email.com</text>
+  <text x="604" y="710" class="label" font-size="9">CRIAR SENHA</text><rect x="604" y="722" width="392" height="48" rx="13" fill="#0B1D2D" stroke="#365064"/><text x="624" y="752" class="input" font-size="12">Mínimo de 8 caracteres</text>
+  <rect x="604" y="794" width="15" height="15" rx="4" fill="#173A46" stroke="#9FD3C6"/><path d="M608 802l3 3 5-7" stroke="#9FD3C6" stroke-width="1.5"/><text x="630" y="806" class="body" font-size="10">Li e aceito os Termos de Uso e a Política de Privacidade.</text>
+  <rect x="604" y="836" width="392" height="54" rx="15" fill="#FF6B57"/><text x="800" y="869" text-anchor="middle" class="title" font-size="14">Criar minha conta</text>
+  <text x="800" y="930" text-anchor="middle" class="body" font-size="11">Já tem conta?</text><text x="875" y="930" class="title" font-size="11" fill="#9FD3C6">Entrar</text>
+
+  <!-- Frame 3 Onboarding -->
+  <rect x="1072" y="210" width="456" height="760" rx="30" fill="#102638" class="border" filter="url(#shadow)"/>
+  <text x="1104" y="248" class="label" font-size="10">03 · PRIMEIRO ACESSO</text>
+  <image href="../public/brand/final/quipraia-3c-wordmark-dark-approved.svg" x="1104" y="282" width="190" height="30"/>
+  <text x="1104" y="354" class="display" font-size="28">Personalize sua experiência.</text>
+  <text x="1104" y="382" class="body" font-size="13">Usaremos isso para ordenar praias e alertas.</text>
+  <text x="1438" y="418" text-anchor="end" class="body" font-size="11">Etapa 1 de 3</text>
+  <rect x="1104" y="430" width="392" height="6" rx="3" fill="#213A4A"/><rect x="1104" y="430" width="130" height="6" rx="3" fill="#9FD3C6"/>
+  <text x="1104" y="480" class="label" font-size="9">SEU NÍVEL DE SURF</text>
+  <rect x="1104" y="496" width="120" height="44" rx="13" fill="#0B1D2D" stroke="#365064"/><text x="1164" y="523" text-anchor="middle" class="body" font-size="11">Iniciante</text>
+  <rect x="1234" y="496" width="132" height="44" rx="13" fill="#173A46" stroke="#9FD3C6"/><circle cx="1253" cy="518" r="4" fill="#9FD3C6"/><text x="1305" y="523" text-anchor="middle" class="title" font-size="11" fill="#9FD3C6">Intermediário</text>
+  <rect x="1376" y="496" width="120" height="44" rx="13" fill="#0B1D2D" stroke="#365064"/><text x="1436" y="523" text-anchor="middle" class="body" font-size="11">Avançado</text>
+  <text x="1104" y="584" class="label" font-size="9">CIDADE PRINCIPAL</text>
+  <rect x="1104" y="600" width="392" height="50" rx="13" fill="#0B1D2D" stroke="#365064"/><path d="M1131 613c-6 0-10 8 0 20 10-12 6-20 0-20z" fill="none" stroke="#9FD3C6" stroke-width="1.6"/><circle cx="1131" cy="620" r="3" fill="#9FD3C6"/><text x="1154" y="631" class="input" font-size="12">Salvador, BA</text><path d="M1470 619l7 7 7-7" stroke="#6B8194" stroke-width="1.6"/>
+  <text x="1104" y="696" class="label" font-size="9">PRAIAS FAVORITAS</text><text x="1496" y="696" text-anchor="end" class="body" font-size="10">Escolha até 3</text>
+  <rect x="1104" y="714" width="392" height="52" rx="14" fill="#173A46" stroke="#9FD3C6"/><circle cx="1130" cy="740" r="8" fill="#9FD3C6"/><path d="M1126 740l3 3 6-7" stroke="#0B1D2D" stroke-width="1.7"/><text x="1154" y="745" class="title" font-size="12">Stella Maris</text><text x="1474" y="745" text-anchor="end" class="body" font-size="10">3,4 km</text>
+  <rect x="1104" y="776" width="190" height="46" rx="13" fill="#0B1D2D" stroke="#365064"/><text x="1199" y="804" text-anchor="middle" class="body" font-size="11">Praia do Flamengo</text>
+  <rect x="1306" y="776" width="190" height="46" rx="13" fill="#0B1D2D" stroke="#365064"/><text x="1401" y="804" text-anchor="middle" class="body" font-size="11">Itapuã</text>
+  <rect x="1104" y="854" width="392" height="54" rx="15" fill="#FF6B57"/><text x="1300" y="887" text-anchor="middle" class="title" font-size="14">Continuar</text>
+  <text x="1300" y="944" text-anchor="middle" class="body" font-size="10">Você poderá alterar tudo depois no perfil.</text>
+
+  <text x="72" y="1012" class="body" font-size="11">Google acelera o acesso; e-mail preserva a escolha do usuário. Apple não faz parte do escopo.</text><text x="1528" y="1012" text-anchor="end" class="label" font-size="9">CANDIDATO À APROVAÇÃO</text>
+</svg>
