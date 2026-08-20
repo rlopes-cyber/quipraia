@@ -32,7 +32,7 @@ O próximo ciclo é de naming, branding e layout. A programação da versão de 
 
 ## Marca
 
-- O nome aprovado para direção criativa é SurfCrew; a validação jurídica e de disponibilidade ainda está pendente.
+- O nome aprovado para direção criativa é QuiPraia; a validação jurídica e de disponibilidade ainda está pendente.
 - Procurar um nome curto, fácil de falar e memorizar, ligado diretamente a surf, ondas, mar ou leitura das condições.
 - O nome precisa permitir expansão para outras cidades e países.
 - A marca deve comunicar surf de forma evidente, sem parecer apenas um app meteorológico.

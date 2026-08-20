@@ -188,14 +188,14 @@ const beaches: Beach[] = [
 function Logo() {
   return (
     <a className="brand" href="#top">
-      <span className="surfcrew-logo-mark" aria-hidden="true">
+      <span className="quipraia-logo-mark" aria-hidden="true">
         <i />
         <i />
         <i />
       </span>
-      <span className="surfcrew-wordmark">
-        <b>surf</b>
-        <em>crew</em>
+      <span className="quipraia-wordmark">
+        <b>qui</b>
+        <em>praia</em>
       </span>
     </a>
   );
@@ -303,7 +303,7 @@ function Landing({
             <em>Você se prepara.</em>
           </h1>
           <p>
-            O SurfCrew reúne maré, ondas, vento e relatos reais para ajudar você
+            O QuiPraia reúne maré, ondas, vento e relatos reais para ajudar você
             a escolher melhor onde surfar.
           </p>
           <button className="hero-cta" onClick={onSignup}>
@@ -325,7 +325,7 @@ function Landing({
           <div className="photo-stamp">
             01
             <br />
-            <small>SURFCREW</small>
+            <small>QUIPRAIA</small>
           </div>
         </div>
       </section>
@@ -345,7 +345,7 @@ function Landing({
       </section>
       <section className="value-section" id="como-funciona">
         <div className="section-intro">
-          <span className="eyebrow">POR QUE SURFCREW?</span>
+          <span className="eyebrow">POR QUE QUIPRAIA?</span>
           <h2>
             Menos achismo.
             <br />
@@ -540,7 +540,7 @@ function AuthScreen({
           </h1>
           <p>
             {currentMode === "signup"
-              ? "Crie seu acesso para acompanhar praias, salvar favoritos e participar da comunidade SurfCrew."
+              ? "Crie seu acesso para acompanhar praias, salvar favoritos e participar da comunidade QuiPraia."
               : "Entre para ver suas praias, seus relatos e as condições de hoje."}
           </p>
         </div>
@@ -548,7 +548,7 @@ function AuthScreen({
           <span className="card-kicker">
             {currentMode === "signup"
               ? "CRIAR ACESSO GRATUITO"
-              : "ENTRAR NO SURFCREW"}
+              : "ENTRAR NO QUIPRAIA"}
           </span>
           <h2>
             {currentMode === "signup"
@@ -791,7 +791,7 @@ function Dashboard({ onLogout }: { onLogout: () => void }) {
         <div className="app-score">
           <b>{activeBeach.score}</b>
           <span>/100</span>
-          <small>índice SurfCrew</small>
+          <small>índice QuiPraia</small>
         </div>
       </section>
       <section className="condition-section">
@@ -1066,7 +1066,7 @@ function ProfileView({ onBack }: { onBack: () => void }) {
         <button className="back-profile" onClick={onBack}>
           ← voltar para condições
         </button>
-        <span className="eyebrow">MEU PERFIL · SURFCREW</span>
+        <span className="eyebrow">MEU PERFIL · QUIPRAIA</span>
         <div className="profile-identity">
           <div className="profile-avatar">R</div>
           <div>

@@ -1,0 +1,11 @@
+<svg width="620" height="170" viewBox="0 0 620 170" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">QuiPraia</title>
+  <desc id="desc">Logotipo tipográfico QuiPraia com letras largas, arredondadas e linha inspirada no rail de uma prancha.</desc>
+  <g transform="translate(18 24) scale(1 .86)">
+    <text x="0" y="92" fill="#062A4D" font-family="Arial Rounded MT Bold, Arial Black, sans-serif" font-size="70" font-weight="900" letter-spacing="-5">qui</text>
+    <text x="127" y="92" fill="#21A699" font-family="Arial Rounded MT Bold, Arial Black, sans-serif" font-size="70" font-weight="900" letter-spacing="-5">praia</text>
+  </g>
+  <path d="M142 131C198 113 250 116 299 132C365 153 443 151 510 127C536 118 558 117 581 124" stroke="#F2C46B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M572 121L593 124L578 138" fill="#062A4D"/>
+  <path d="M91 51C91 41 99 33 109 33C119 33 127 41 127 51" stroke="#062A4D" stroke-width="5" stroke-linecap="round"/>
+</svg>

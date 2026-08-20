@@ -1,0 +1,7 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Símbolo QuiPraia">
+  <rect x="12" y="12" width="232" height="232" rx="72" fill="#062A4D"/>
+  <path d="M70 71C70 53 84 39 102 39C120 39 134 53 134 71C134 86 125 97 112 101L137 123" stroke="#F6F3E9" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M51 148C81 121 113 122 143 145C167 164 191 167 209 151" stroke="#21A699" stroke-width="15" stroke-linecap="round"/>
+  <path d="M51 177C84 153 119 155 149 177C170 192 191 194 210 181" stroke="#F2C46B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M193 176L215 181L201 196" fill="#F6F3E9"/>
+</svg>

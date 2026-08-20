@@ -43,7 +43,7 @@ export default function AdminPage() {
     return (
       <main className="admin-login">
         <div className="admin-login-card">
-          <span className="admin-label">SURFCREW</span>
+          <span className="admin-label">QUIPRAIA</span>
           <h1>Carregando painel</h1>
         </div>
       </main>
@@ -61,14 +61,14 @@ export default function AdminPage() {
     <main className="admin-shell">
       <aside className="admin-sidebar">
         <a className="admin-brand" href="/">
-          <span className="surfcrew-logo-mark" aria-hidden="true">
+          <span className="quipraia-logo-mark" aria-hidden="true">
             <i />
             <i />
             <i />
           </span>
-          <span className="surfcrew-wordmark">
-            <b>surf</b>
-            <em>crew</em>
+          <span className="quipraia-wordmark">
+            <b>qui</b>
+            <em>praia</em>
           </span>
         </a>
         <span className="admin-label">ADMINISTRAÇÃO</span>
@@ -101,7 +101,7 @@ export default function AdminPage() {
       <section className="admin-main">
         <header className="admin-header">
           <div>
-            <span className="eyebrow">SURFCREW · BETA SALVADOR</span>
+            <span className="eyebrow">QUIPRAIA · BETA SALVADOR</span>
             <h1>{section}</h1>
           </div>
           <a className="view-site" href="/">
@@ -199,7 +199,7 @@ export default function AdminPage() {
                   <b>Atualizado</b>
                 </div>
                 <p className="source-tip">
-                  O SurfCrew mostra o horário e a fonte em cada leitura para
+                  O QuiPraia mostra o horário e a fonte em cada leitura para
                   manter a confiança da comunidade.
                 </p>
               </div>
@@ -296,14 +296,14 @@ function AdminLogin({ onSuccess }: { onSuccess: () => void }) {
     <main className="admin-login">
       <div className="admin-login-card">
         <a className="admin-brand" href="/">
-          <span className="surfcrew-logo-mark" aria-hidden="true">
+          <span className="quipraia-logo-mark" aria-hidden="true">
             <i />
             <i />
             <i />
           </span>
-          <span className="surfcrew-wordmark">
-            <b>surf</b>
-            <em>crew</em>
+          <span className="quipraia-wordmark">
+            <b>qui</b>
+            <em>praia</em>
           </span>
         </a>
         <span className="admin-label">ACESSO ADMINISTRATIVO</span>
@@ -314,7 +314,7 @@ function AdminLogin({ onSuccess }: { onSuccess: () => void }) {
         </h1>
         <p>
           Área exclusiva para moderar relatos, praias, anúncios e fontes do
-          SurfCrew.
+          QuiPraia.
         </p>
         <form onSubmit={submit}>
           <label>

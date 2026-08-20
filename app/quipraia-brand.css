@@ -1,0 +1,66 @@
+.quipraia-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+  font-weight: 900;
+  letter-spacing: -0.09em;
+  color: #062a4d;
+  transform: scaleY(0.92);
+}
+.quipraia-wordmark b {
+  font-weight: 900;
+}
+.quipraia-wordmark em {
+  font-style: normal;
+  color: #21a699;
+}
+.quipraia-logo-mark {
+  position: relative;
+  display: inline-block;
+  width: 31px;
+  height: 31px;
+  margin-right: 8px;
+  border-radius: 12px;
+  background: #062a4d;
+  vertical-align: -8px;
+  overflow: hidden;
+  transform: rotate(-4deg);
+}
+.quipraia-logo-mark:before,
+.quipraia-logo-mark:after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  border-radius: 50%;
+  border: 2px solid #21a699;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  height: 9px;
+  transform: rotate(-7deg);
+}
+.quipraia-logo-mark:before {
+  bottom: 6px;
+}
+.quipraia-logo-mark:after {
+  bottom: 11px;
+  border-color: #f6f3e9;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+.quipraia-logo-mark i {
+  display: none;
+}
+.landing .quipraia-wordmark {
+  color: #062a4d;
+}
+.auth-nav .quipraia-wordmark,
+.admin-brand .quipraia-wordmark {
+  color: #fff;
+}
+.admin-login-card .quipraia-wordmark {
+  color: #062a4d;
+}
+.admin-login-card .quipraia-logo-mark {
+  background: #062a4d;
+}
