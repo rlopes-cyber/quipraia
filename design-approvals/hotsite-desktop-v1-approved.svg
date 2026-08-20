@@ -1,0 +1,91 @@
+<svg width="1600" height="1280" viewBox="0 0 1600 1280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="1280"><stop stop-color="#0B1D2D"/><stop offset="1" stop-color="#102A3C"/></linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#07131E" stop-opacity=".98"/><stop offset=".5" stop-color="#07131E" stop-opacity=".72"/><stop offset="1" stop-color="#07131E" stop-opacity=".25"/></linearGradient>
+    <linearGradient id="seaCard" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#173A46"/><stop offset="1" stop-color="#102638"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dy="18" stdDeviation="22" flood-color="#020A10" flood-opacity=".4"/></filter>
+    <clipPath id="heroClip"><rect x="0" y="92" width="1600" height="500"/></clipPath>
+    <clipPath id="phoneClip"><rect x="1168" y="136" width="270" height="548" rx="34"/></clipPath>
+    <style>
+      .display{font-family:Sora,Inter,sans-serif;font-weight:700;fill:#F4F6F7}.title{font-family:Sora,Inter,sans-serif;font-weight:600;fill:#F4F6F7}.body{font-family:Inter,Arial,sans-serif;font-weight:500;fill:#AFC0CD}.label{font-family:Inter,Arial,sans-serif;font-weight:700;fill:#6B8194;letter-spacing:1.7px}.data{font-family:Sora,Inter,sans-serif;font-weight:700;fill:#F4F6F7}.line{stroke:#9FD3C6;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.border{stroke:#365064;stroke-width:1}
+    </style>
+  </defs>
+  <rect width="1600" height="1280" fill="url(#bg)"/>
+
+  <!-- Header -->
+  <rect width="1600" height="92" fill="#081824"/>
+  <image href="../public/brand/final/quipraia-3c-wordmark-dark-approved.svg" x="72" y="28" width="224" height="38"/>
+  <text x="670" y="57" class="body" font-size="13">Como funciona</text><text x="802" y="57" class="body" font-size="13">Praias</text><text x="876" y="57" class="body" font-size="13">Comunidade</text><text x="986" y="57" class="body" font-size="13">Planos</text>
+  <text x="1232" y="57" class="title" font-size="13">Entrar</text>
+  <rect x="1302" y="23" width="226" height="46" rx="14" fill="#FF6B57"/>
+  <text x="1399" y="51" text-anchor="middle" class="title" font-size="13">Criar conta</text>
+  <path d="M1480 46h15m-6-6 6 6-6 6" stroke="#F4F6F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Hero -->
+  <g clip-path="url(#heroClip)">
+    <image href="../public/images/quipraia-stella-maris-hero-v1.png" x="0" y="92" width="1600" height="500" preserveAspectRatio="xMidYMid slice"/>
+    <rect x="0" y="92" width="1600" height="500" fill="url(#hero)"/>
+  </g>
+  <text x="100" y="172" class="label" font-size="11" fill="#9FD3C6">PREVISÃO + COMUNIDADE SURF</text>
+  <text x="100" y="244" class="display" font-size="58">Qual praia hoje?</text>
+  <text x="100" y="292" class="title" font-size="24">Decida melhor. Chegue na hora certa.</text>
+  <text x="100" y="337" class="body" font-size="17" fill="#E1E9ED">Maré, ondas, vento e relatos de quem está na água —</text>
+  <text x="100" y="364" class="body" font-size="17" fill="#E1E9ED">reunidos em uma leitura simples para o seu próximo surf.</text>
+  <rect x="100" y="408" width="250" height="56" rx="16" fill="#FF6B57"/>
+  <rect x="126" y="425" width="22" height="17" rx="3" fill="none" stroke="#F4F6F7" stroke-width="2"/><path d="M127 427l10 8 10-8" stroke="#F4F6F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="162" y="442" class="title" font-size="14">Criar conta com e-mail</text>
+  <rect x="366" y="408" width="226" height="56" rx="16" fill="#0B1D2D" fill-opacity=".72" stroke="#9FD3C6"/>
+  <circle cx="398" cy="436" r="13" fill="#F4F6F7"/><text x="398" y="441" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#4285F4">G</text>
+  <text x="423" y="442" class="title" font-size="14" fill="#9FD3C6">Continuar com Google</text>
+  <text x="100" y="492" class="body" font-size="11" fill="#D8E2E8">Escolha Google ou cadastro com e-mail · sem cartão · acesso gratuito</text>
+  <g transform="translate(100 526)">
+    <circle cx="7" cy="7" r="7" fill="#9FD3C6" opacity=".18"/><circle cx="7" cy="7" r="3" fill="#9FD3C6"/><text x="24" y="12" class="body" font-size="12" fill="#F4F6F7">Começando por Salvador</text>
+    <circle cx="203" cy="7" r="7" fill="#9FD3C6" opacity=".18"/><circle cx="203" cy="7" r="3" fill="#9FD3C6"/><text x="220" y="12" class="body" font-size="12" fill="#F4F6F7">Dados atualizados</text>
+    <circle cx="382" cy="7" r="7" fill="#9FD3C6" opacity=".18"/><circle cx="382" cy="7" r="3" fill="#9FD3C6"/><text x="399" y="12" class="body" font-size="12" fill="#F4F6F7">Feito para surfistas</text>
+  </g>
+
+  <!-- Phone preview -->
+  <rect x="1150" y="118" width="306" height="584" rx="46" fill="#07131E" stroke="#9FD3C6" stroke-opacity=".42" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="1261" y="128" width="84" height="8" rx="4" fill="#365064"/>
+  <g clip-path="url(#phoneClip)"><image href="home-mobile-approved.png" x="1168" y="136" width="270" height="550" preserveAspectRatio="xMidYMin slice"/></g>
+  <rect x="1168" y="136" width="270" height="548" rx="34" fill="none" stroke="#0B1D2D" stroke-width="5"/>
+
+  <!-- Value strip -->
+  <rect x="72" y="626" width="1456" height="190" rx="28" fill="#102638" stroke="#365064" filter="url(#shadow)"/>
+  <text x="104" y="672" class="label" font-size="10">TUDO O QUE MUDA A SESSÃO</text>
+  <text x="104" y="710" class="title" font-size="24">Informação completa, sem complicar a leitura.</text>
+  <g transform="translate(104 734)">
+    <path d="M2 46H58M8 43C15 43 17 11 37 10C49 9 56 19 52 28C48 22 43 21 38 25C31 31 36 42 50 43" stroke="#9FD3C6" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="80" y="19" class="title" font-size="15">Ondas</text><text x="80" y="43" class="body" font-size="12">Altura, período, direção e energia.</text>
+  </g>
+  <line x1="516" y1="730" x2="516" y2="788" stroke="#294458"/>
+  <g transform="translate(550 734)">
+    <path d="M30 27V4M22 12l8-8 8 8M4 35c5-5 10-5 15 0 5 5 10 5 15 0 5-5 10-5 15 0 3 3 6 4 9 3M4 43c5-5 10-5 15 0 5 5 10 5 15 0 5-5 10-5 15 0 3 3 6 4 9 3M4 51c5-5 10-5 15 0 5 5 10 5 15 0 5-5 10-5 15 0" stroke="#9FD3C6" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="80" y="19" class="title" font-size="15">Maré</text><text x="80" y="43" class="body" font-size="12">Curva, preamar, baixa-mar e movimento.</text>
+  </g>
+  <line x1="996" y1="730" x2="996" y2="788" stroke="#294458"/>
+  <g transform="translate(1030 734)">
+    <path d="M2 17H30C41 17 41 4 32 4C27 4 24 7 24 11M2 28H45C57 28 57 13 47 13C42 13 39 17 39 21M2 39H34C45 39 45 52 36 52C31 52 28 49 28 45" stroke="#9FD3C6" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="80" y="19" class="title" font-size="15">Vento</text><text x="80" y="43" class="body" font-size="12">Média, rajadas e direção ao longo do dia.</text>
+  </g>
+
+  <!-- Plans -->
+  <text x="72" y="872" class="label" font-size="10">ESCOLHA COMO PARTICIPAR</text>
+  <text x="72" y="910" class="display" font-size="30">Comece grátis. Fortaleça quando quiser.</text>
+  <rect x="72" y="940" width="700" height="248" rx="26" fill="#102638" stroke="#365064"/>
+  <text x="104" y="982" class="title" font-size="21">Gratuito</text><text x="104" y="1022" class="data" font-size="32">R$ 0</text><text x="192" y="1022" class="body" font-size="12">para começar</text>
+  <circle cx="112" cy="1056" r="4" fill="#9FD3C6"/><text x="128" y="1061" class="body" font-size="12">Condição atual e próximas 12 horas</text>
+  <circle cx="112" cy="1088" r="4" fill="#9FD3C6"/><text x="128" y="1093" class="body" font-size="12">Praias de Salvador e relatos da comunidade</text>
+  <circle cx="112" cy="1120" r="4" fill="#9FD3C6"/><text x="128" y="1125" class="body" font-size="12">Apoiado por anúncios de parceiros</text>
+  <rect x="504" y="1050" width="226" height="52" rx="15" fill="#173146" stroke="#9FD3C6"/><text x="617" y="1082" text-anchor="middle" class="title" font-size="13" fill="#9FD3C6">Criar conta grátis</text>
+
+  <rect x="796" y="928" width="732" height="272" rx="28" fill="url(#seaCard)" stroke="#9FD3C6" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="824" y="950" width="116" height="28" rx="14" fill="#FF6B57"/><text x="882" y="968" text-anchor="middle" class="title" font-size="10">RECOMENDADO</text>
+  <text x="824" y="1014" class="title" font-size="21">Colaborador</text><text x="824" y="1056" class="data" font-size="34">R$ 9,90</text><text x="968" y="1056" class="body" font-size="12">por mês</text>
+  <circle cx="832" cy="1090" r="4" fill="#9FD3C6"/><text x="848" y="1095" class="body" font-size="12">Tudo do Gratuito + previsão estendida</text>
+  <circle cx="832" cy="1122" r="4" fill="#9FD3C6"/><text x="848" y="1127" class="body" font-size="12">Comparação, alertas e favoritos sem limite</text>
+  <circle cx="832" cy="1154" r="4" fill="#9FD3C6"/><text x="848" y="1159" class="body" font-size="12">Navegação sem anúncios e apoio ao movimento surf</text>
+  <rect x="1262" y="1050" width="226" height="52" rx="15" fill="#FF6B57"/><text x="1375" y="1082" text-anchor="middle" class="title" font-size="13">Quero colaborar</text>
+
+  <!-- Footer / ad marker -->
+  <rect x="72" y="1220" width="1456" height="40" rx="12" fill="#132F42" stroke="#FF6B57" stroke-opacity=".5" stroke-dasharray="5 5"/>
+  <text x="98" y="1245" class="label" font-size="9" fill="#FF6B57">ANUNCIE AQUI</text><text x="218" y="1245" class="body" font-size="11">Fortaleça o movimento surf e conecte sua marca à comunidade.</text>
+  <text x="1500" y="1245" text-anchor="end" class="label" font-size="9">CANDIDATO À APROVAÇÃO</text>
+</svg>
