@@ -11,6 +11,8 @@ O projeto já funciona localmente em modo de demonstração. Para testar cadastr
 
 O banco inclui perfis, praias favoritas, relatos e confirmações. As políticas RLS impedem que um usuário altere dados pertencentes a outro.
 
+Se o banco já foi criado com uma versão anterior, execute apenas os arquivos novos da pasta `supabase/migrations`, seguindo a ordem numérica. A migração 002 aplica o limite de cinco praias favoritas, a 003 prepara a operação administrativa e a 004 cria a fundação do plano Colaborador.
+
 ## 2. Configurar o Google
 
 1. Crie credenciais OAuth no Google Cloud Console.
@@ -28,9 +30,12 @@ Copie `.env.example` para `.env.local` e preencha:
 NEXT_PUBLIC_SUPABASE_URL=https://seu-projeto.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=sua-chave-publica-anon
 NEXT_PUBLIC_SITE_URL=http://localhost:3001
+NEXT_PUBLIC_MAP_TILE_URL=https://tile.openstreetmap.org/{z}/{x}/{y}.png
 ```
 
 A chave pública anon pode ser usada no navegador porque a proteção real está nas políticas RLS. Nunca exponha a service role key.
+
+`NEXT_PUBLIC_MAP_TILE_URL` é opcional. O valor padrão usa o mapa público do OpenStreetMap apenas para visualização interativa normal no piloto. A atribuição permanece visível e o projeto não implementa download offline ou pré-carregamento. Para uma operação com tráfego comercial, substitua essa URL por um provedor de tiles com garantia e limites adequados.
 
 ## 4. Rodar o teste
 

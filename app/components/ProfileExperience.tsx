@@ -1,24 +1,95 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { beaches } from "../lib/beaches";
 import { getSupabaseBrowserClient } from "../lib/supabase";
+
+type Profile = { name: string; email: string; level: string; city: string; plan: string };
+const demoProfile: Profile = { name: "Ricardo Lopes", email: "ricardo@email.com", level: "Intermediário", city: "Salvador, BA", plan: "Colaborador" };
 
 export function ProfileExperience() {
   const [favorites, setFavorites] = useState(() => new Set(["stella-maris", "praia-do-flamengo", "itapua"]));
   const [alerts, setAlerts] = useState(true);
-  const [profile, setProfile] = useState({ name: "Ricardo Lopes", email: "ricardo@email.com", level: "Intermediário", city: "Salvador, BA", plan: "Colaborador" });
-  async function loadProfile() { const client = getSupabaseBrowserClient(); if (!client) return; const { data: auth } = await client.auth.getUser(); if (!auth.user) return; const [{ data: row }, { data: favoriteRows }] = await Promise.all([client.from("profiles").select("name, city, surf_level, plan, alerts_enabled").eq("id", auth.user.id).single(), client.from("favorites").select("beach_slug").eq("user_id", auth.user.id)]); if (row) { setProfile({ name: row.name || auth.user.user_metadata?.name || "Surfista QuiPraia", email: auth.user.email ?? "", level: titleCase(row.surf_level), city: row.city, plan: titleCase(row.plan) }); setAlerts(row.alerts_enabled); } if (favoriteRows) setFavorites(new Set(favoriteRows.map((item) => item.beach_slug))); }
-  async function toggleFavorite(slug: string) { const removing = favorites.has(slug); setFavorites((current) => { const next = new Set(current); if (next.has(slug)) next.delete(slug); else next.add(slug); return next; }); const client = getSupabaseBrowserClient(); const user = client ? (await client.auth.getUser()).data.user : null; if (!client || !user) return; if (removing) await client.from("favorites").delete().eq("user_id", user.id).eq("beach_slug", slug); else await client.from("favorites").insert({ user_id: user.id, beach_slug: slug }); }
-  async function toggleAlerts() { const next = !alerts; setAlerts(next); const client = getSupabaseBrowserClient(); const user = client ? (await client.auth.getUser()).data.user : null; if (client && user) await client.from("profiles").update({ alerts_enabled: next, updated_at: new Date().toISOString() }).eq("id", user.id); }
+  const [profile, setProfile] = useState(demoProfile);
+  const [editing, setEditing] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const [feedback, setFeedback] = useState("");
+
+  async function loadProfile() {
+    const client = getSupabaseBrowserClient();
+    if (!client) return;
+    const { data: auth } = await client.auth.getUser();
+    if (!auth.user) return;
+    const [{ data: row }, { data: favoriteRows }] = await Promise.all([
+      client.from("profiles").select("name, city, surf_level, plan, alerts_enabled").eq("id", auth.user.id).single(),
+      client.from("favorites").select("beach_slug").eq("user_id", auth.user.id),
+    ]);
+    if (row) {
+      setProfile({ name: row.name || auth.user.user_metadata?.name || "Surfista QuiPraia", email: auth.user.email ?? "", level: titleCase(row.surf_level), city: row.city, plan: titleCase(row.plan) });
+      setAlerts(row.alerts_enabled);
+    }
+    if (favoriteRows) setFavorites(new Set(favoriteRows.map((item) => item.beach_slug)));
+  }
+
+  async function saveProfile(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const next = { ...profile, name: String(form.get("name") ?? "").trim(), city: String(form.get("city") ?? "").trim(), level: String(form.get("level") ?? "Iniciante") };
+    if (!next.name || !next.city) return;
+    setSaving(true);
+    setFeedback("");
+    const client = getSupabaseBrowserClient();
+    const user = client ? (await client.auth.getUser()).data.user : null;
+    if (client && user) {
+      const { error } = await client.from("profiles").update({ name: next.name, city: next.city, surf_level: next.level.toLowerCase() }).eq("id", user.id);
+      if (error) { setFeedback("Não foi possível salvar o perfil. Tente novamente."); setSaving(false); return; }
+    }
+    setProfile(next);
+    setEditing(false);
+    setSaving(false);
+    setFeedback("Perfil atualizado com sucesso.");
+  }
+
+  async function toggleFavorite(slug: string) {
+    const removing = favorites.has(slug);
+    if (!removing && favorites.size >= 5) { setFeedback("Você pode escolher até cinco praias favoritas."); return; }
+    const previous = new Set(favorites);
+    const next = new Set(favorites);
+    if (removing) next.delete(slug); else next.add(slug);
+    setFavorites(next);
+    setFeedback("");
+    const client = getSupabaseBrowserClient();
+    const user = client ? (await client.auth.getUser()).data.user : null;
+    if (!client || !user) return;
+    const result = removing ? await client.from("favorites").delete().eq("user_id", user.id).eq("beach_slug", slug) : await client.from("favorites").insert({ user_id: user.id, beach_slug: slug });
+    if (result.error) { setFavorites(previous); setFeedback("Não foi possível atualizar suas favoritas."); }
+  }
+
+  async function toggleAlerts() {
+    const previous = alerts;
+    const next = !alerts;
+    setAlerts(next);
+    setFeedback("");
+    const client = getSupabaseBrowserClient();
+    const user = client ? (await client.auth.getUser()).data.user : null;
+    if (!client || !user) return;
+    const { error } = await client.from("profiles").update({ alerts_enabled: next }).eq("id", user.id);
+    if (error) { setAlerts(previous); setFeedback("Não foi possível atualizar os alertas."); }
+  }
+
   // The state update happens only after the external Supabase request resolves.
   // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { void loadProfile(); }, []);
+
   return <div className="profile-layout">
-    <section className="profile-card"><div className="profile-intro"><b>{initials(profile.name)}</b><div><h2>{profile.name}</h2><p>{profile.level} · {profile.city}</p><span>● {profile.plan}</span></div><button>Editar perfil</button></div><div className="profile-details"><div>Nível de surf<strong>{profile.level}</strong></div><div>Cidade principal<strong>{profile.city}</strong></div><div>E-mail<strong>{profile.email}</strong></div></div></section>
-    <section className="profile-plan"><span className="hot-kicker">Seu plano</span><h2>{profile.plan}</h2><strong>{profile.plan === "Colaborador" ? "R$ 9,90" : "R$ 0"} <small>por mês</small></strong><p>{profile.plan === "Colaborador" ? "Previsão estendida, comparação, alertas e experiência sem anúncios." : "Previsão essencial, comunidade e anúncios que fortalecem o surf local."}</p><button>{profile.plan === "Colaborador" ? "Gerenciar plano" : "Virar colaborador"}</button></section>
-    <section className="favorite-card"><header><div><span className="hot-kicker">Preferências</span><h2>Praias favoritas</h2></div><small>Escolha até 5</small></header><div>{beaches.slice(0, 6).map((beach) => <button className={favorites.has(beach.slug) ? "selected" : ""} onClick={() => toggleFavorite(beach.slug)} key={beach.slug}><img src={beach.image} style={{ objectPosition: beach.imagePosition }} alt="" /><span>{favorites.has(beach.slug) ? "✓" : "+"}</span><strong>{beach.name}</strong><small>{beach.condition} · {beach.wave.toFixed(1)} m</small></button>)}</div></section>
-    <section className="alert-card"><div><span className="hot-kicker">Notificações</span><h2>Melhor janela</h2><p>Receba um aviso quando uma praia favorita alcançar sua condição desejada.</p></div><button aria-label="Ativar alertas de melhor janela" aria-pressed={alerts} onClick={toggleAlerts} className={alerts ? "on" : ""}><i /></button></section>
+    <section className="profile-card">
+      <div className="profile-intro"><b>{initials(profile.name)}</b><div><h2>{profile.name}</h2><p>{profile.level} · {profile.city}</p><span>● {profile.plan}</span></div><button type="button" onClick={() => { setEditing((value) => !value); setFeedback(""); }}>{editing ? "Cancelar" : "Editar perfil"}</button></div>
+      {editing ? <form className="profile-edit-form" onSubmit={saveProfile}><label>Nome<input name="name" defaultValue={profile.name} required maxLength={80} /></label><label>Cidade<input name="city" defaultValue={profile.city} required maxLength={80} /></label><label>Nível de surf<select name="level" defaultValue={profile.level}><option>Iniciante</option><option>Intermediário</option><option>Avançado</option></select></label><button className="coral-action" type="submit" disabled={saving}>{saving ? "Salvando..." : "Salvar alterações"}</button></form> : <div className="profile-details"><div>Nível de surf<strong>{profile.level}</strong></div><div>Cidade principal<strong>{profile.city}</strong></div><div>E-mail<strong>{profile.email}</strong></div></div>}
+      {feedback ? <p className="form-feedback" role="status">{feedback}</p> : null}
+    </section>
+    <section className="profile-plan"><span className="hot-kicker">Seu plano</span><h2>{profile.plan}</h2><strong>{profile.plan === "Colaborador" ? "R$ 9,90" : "R$ 0"} <small>por mês</small></strong><p>{profile.plan === "Colaborador" ? "Previsão estendida, comparação, alertas e experiência sem anúncios." : "Previsão essencial, comunidade e anúncios que fortalecem o surf local."}</p><a href="/planos">{profile.plan === "Colaborador" ? "Gerenciar plano" : "Virar colaborador"}</a></section>
+    <section className="favorite-card"><header><div><span className="hot-kicker">Preferências</span><h2>Praias favoritas</h2></div><small>{favorites.size} de 5 selecionadas</small></header><div>{beaches.map((beach) => <button type="button" aria-pressed={favorites.has(beach.slug)} className={favorites.has(beach.slug) ? "selected" : ""} onClick={() => void toggleFavorite(beach.slug)} key={beach.slug}><img src={beach.image} style={{ objectPosition: beach.imagePosition }} alt="" /><span>{favorites.has(beach.slug) ? "✓" : "+"}</span><strong>{beach.name}</strong><small>{beach.condition} · {beach.wave.toFixed(1)} m</small></button>)}</div></section>
+    <section className="alert-card"><div><span className="hot-kicker">Notificações</span><h2>Melhor janela</h2><p>Receba um aviso quando uma praia favorita alcançar sua condição desejada.</p></div><button aria-label="Ativar alertas de melhor janela" aria-pressed={alerts} onClick={() => void toggleAlerts()} className={alerts ? "on" : ""}><i /></button></section>
   </div>;
 }
 

@@ -2,6 +2,8 @@
 
 Este diretório é a fonte de verdade para programar o MVP da QuiPraia. Ele consolida as decisões aprovadas e impede que marca, iconografia ou layout sejam reinterpretados durante a implementação.
 
+Comece por [Estado atual da implementação](10-IMPLEMENTATION-STATUS.md). Esse arquivo separa o que já está pronto do que ainda depende de contas, licenças e credenciais externas.
+
 ## Estado das decisões
 
 - Marca oficial: **QuiPraia: direção 3C Performance**.

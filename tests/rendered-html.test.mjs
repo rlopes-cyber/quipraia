@@ -63,7 +63,7 @@ test("renders the authenticated product home", async () => {
   const html = await response.text();
   assert.match(html, /Stella Maris/);
   assert.match(html, /Condição atual/);
-  assert.match(html, /Curva e extremos/);
+  assert.match(html, /Curva modelada/);
   assert.match(html, /icon-waves/);
   assert.match(html, /Sair da conta/);
 });
@@ -72,7 +72,7 @@ test("renders the core product journeys", async () => {
   const expectations = [
     ["/mapa", [/Mapa de sessões/, /Praia do Flamengo/, /Stella Maris/, /Imagem editorial QuiPraia/]],
     ["/comparar", [/Comparar praias/, /Jaguaribe/, /\+12h/, /quipraia-jaguaribe-v1\.jpg/]],
-    ["/praias/stella-maris", [/Stella Maris/, /Janela da sessão/, /Ondas/, /Período/, /Vento/, /Maré/, /Explore a costa/]],
+    ["/praias/stella-maris", [/Stella Maris/, /Evolução do nível do mar/, /Ondas/, /Período/, /Vento/, /Nível do mar/, /Explore a costa/]],
     ["/comunidade", [/Relatar condição/, /De quem está na água/, /Pulso da comunidade/]],
     ["/perfil", [/Praias favoritas/, /Melhor janela/, /Colaborador/]],
   ];
@@ -82,6 +82,30 @@ test("renders the core product journeys", async () => {
     assert.equal(response.status, 200, `${path} should render successfully`);
     const html = await response.text();
     for (const pattern of patterns) assert.match(html, pattern);
+    assert.doesNotMatch(html, /\u2014/, `${path} should not use em dashes`);
+  }
+});
+
+test("renders plans and administration without insecure demo credentials", async () => {
+  const plans = await render("/planos");
+  assert.equal(plans.status, 200);
+  const plansHtml = await plans.text();
+  assert.match(plansHtml, /R\$ 9,90/);
+  assert.match(plansHtml, /Quero ser Colaborador/);
+  assert.match(plansHtml, /cobrança será ativada/i);
+
+  const admin = await render("/admin");
+  assert.equal(admin.status, 200);
+  const adminHtml = await admin.text();
+  assert.match(adminHtml, /Visão geral/);
+  assert.match(adminHtml, /Praias ativas/i);
+  assert.doesNotMatch(adminHtml, /adm\*123|adm@ondai|NEXT_PUBLIC_DEMO_ADMIN/i);
+});
+
+test("does not render em dashes in any principal journey", async () => {
+  for (const path of ["/", "/app", "/mapa", "/comparar", "/comunidade", "/perfil", "/planos", "/admin", "/entrar", "/cadastro"]) {
+    const response = await render(path);
+    const html = await response.text();
     assert.doesNotMatch(html, /\u2014/, `${path} should not use em dashes`);
   }
 });
