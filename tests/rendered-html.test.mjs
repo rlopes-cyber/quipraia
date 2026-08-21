@@ -17,7 +17,7 @@ test("renders the QuiPraia hotsite with approved brand and plans", async () => {
   assert.match(html, /<title>QuiPraia — Qual praia hoje\?<\/title>/i);
   assert.match(html, /quipraia-3c-wordmark-dark-approved\.svg/);
   assert.match(html, /Continuar com Google/);
-  assert.match(html, /R\$<\/small> 9,90|R\$ 9,90/);
+  assert.match(html, /R\$ 9,90/);
   assert.match(html, /Fortaleça o movimento surf/);
   assert.doesNotMatch(html, /Ondai|adm\*123|adm@ondai/i);
 });
@@ -27,7 +27,7 @@ test("renders both authentication choices", async () => {
     const response = await render(path);
     assert.equal(response.status, 200);
     const html = await response.text();
-    assert.match(html, /Continuar com Google/);
+    assert.match(html, /(Continuar|Cadastrar) com Google/);
     assert.match(html, /type="email"/);
     assert.match(html, /type="password"/);
   }
@@ -38,6 +38,7 @@ test("renders the authenticated product home", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /Stella Maris/);
-  assert.match(html, /Praias em destaque/);
-  assert.match(html, /icon-wave/);
+  assert.match(html, /Condição atual/);
+  assert.match(html, /Curva e extremos/);
+  assert.match(html, /icon-waves/);
 });
