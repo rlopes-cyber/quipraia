@@ -38,3 +38,8 @@ yarn-error.log*
 /.wrangler/
 /outputs/
 /work/
+
+# migration scratch (not deleted automatically over the device bridge)
+/_to_delete/
+*.tsbuildinfo
+/public/maplibre/

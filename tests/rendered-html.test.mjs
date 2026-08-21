@@ -1,13 +1,74 @@
 import assert from "node:assert/strict";
-import test from "node:test";
+import { spawn } from "node:child_process";
+import test, { after, before } from "node:test";
+
+// Next.js has no equivalent of the previous Vinext/Cloudflare worker import
+// (`dist/server/index.js`). Instead this suite builds and starts a real
+// `next start` server once, then exercises it over HTTP for every journey,
+// as suggested by handoff/claude/MASTER-PROMPT.md.
+const PORT = process.env.TEST_PORT || "3100";
+const BASE_URL = `http://127.0.0.1:${PORT}`;
+
+let serverProcess;
+
+function waitForServer(url, timeoutMs = 60_000) {
+  const start = Date.now();
+  return new Promise((resolve, reject) => {
+    const attempt = async () => {
+      try {
+        const response = await fetch(url, { headers: { accept: "text/html" } });
+        if (response.ok || response.status < 500) {
+          resolve();
+          return;
+        }
+      } catch {
+        // server not ready yet
+      }
+      if (Date.now() - start > timeoutMs) {
+        reject(new Error(`Timed out waiting for ${url} to respond`));
+        return;
+      }
+      setTimeout(attempt, 300);
+    };
+    attempt();
+  });
+}
+
+before(async () => {
+  serverProcess = spawn("npx", ["next", "start", "-p", PORT], {
+    cwd: new URL("..", import.meta.url),
+    stdio: ["ignore", "pipe", "pipe"],
+    env: { ...process.env, NODE_ENV: "production" },
+  });
+
+  let startupOutput = "";
+  serverProcess.stdout.on("data", (chunk) => {
+    startupOutput += chunk.toString();
+  });
+  serverProcess.stderr.on("data", (chunk) => {
+    startupOutput += chunk.toString();
+  });
+
+  serverProcess.on("exit", (code) => {
+    if (code !== null && code !== 0) {
+      console.error("next start exited early:\n", startupOutput);
+    }
+  });
+
+  await waitForServer(`${BASE_URL}/`);
+});
+
+after(() => {
+  if (serverProcess && !serverProcess.killed) {
+    serverProcess.kill("SIGTERM");
+  }
+});
 
 async function render(path = "/") {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}-${path}`);
-  const { default: worker } = await import(workerUrl.href);
-  return worker.fetch(new Request(`http://localhost${path}`, { headers: { accept: "text/html" } }), {
-    ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) },
-  }, { waitUntil() {}, passThroughOnException() {} });
+  return fetch(`${BASE_URL}${path}`, {
+    headers: { accept: "text/html" },
+    redirect: "manual",
+  });
 }
 
 test("renders the QuiPraia hotsite with approved brand and plans", async () => {
@@ -53,7 +114,7 @@ test("keeps authentication callbacks safe in demonstration mode", async () => {
   const response = await render("/auth/callback?next=//site-malicioso.example");
   assert.ok([302, 303, 307, 308].includes(response.status));
   const location = response.headers.get("location") ?? "";
-  assert.match(location, /^http:\/\/localhost\/app\?modo=demonstracao$/);
+  assert.match(location, /^http:\/\/127\.0\.0\.1:\d+\/app\?modo=demonstracao$/);
   assert.doesNotMatch(location, /site-malicioso/);
 });
 
@@ -82,7 +143,7 @@ test("renders the core product journeys", async () => {
     assert.equal(response.status, 200, `${path} should render successfully`);
     const html = await response.text();
     for (const pattern of patterns) assert.match(html, pattern);
-    assert.doesNotMatch(html, /\u2014/, `${path} should not use em dashes`);
+    assert.doesNotMatch(html, /—/, `${path} should not use em dashes`);
   }
 });
 
@@ -106,6 +167,6 @@ test("does not render em dashes in any principal journey", async () => {
   for (const path of ["/", "/app", "/mapa", "/comparar", "/comunidade", "/perfil", "/planos", "/admin", "/entrar", "/cadastro"]) {
     const response = await render(path);
     const html = await response.text();
-    assert.doesNotMatch(html, /\u2014/, `${path} should not use em dashes`);
+    assert.doesNotMatch(html, /—/, `${path} should not use em dashes`);
   }
 });

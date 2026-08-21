@@ -2,12 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import { AttributionControl, GeolocateControl, Map as LibreMap, Marker, NavigationControl, setWorkerUrl } from "maplibre-gl";
-import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { beaches } from "../lib/beaches";
 import { DataIcon } from "./ProductShell";
 
-setWorkerUrl(workerUrl);
+setWorkerUrl("/maplibre/maplibre-gl-worker.mjs");
 const tileUrl = process.env.NEXT_PUBLIC_MAP_TILE_URL || "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
 
 export function MapExperience() {
