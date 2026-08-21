@@ -1,5 +1,9 @@
 # Handoff para desenvolvimento
 
+## Como usar este documento
+
+A implementação visual e funcional inicial já existe no repositório. Esta lista serve como especificação de conferência, não como autorização para reconstruir o produto. Preserve o que está aprovado, migre o runtime para Next.js nativo e complete apenas lacunas verificadas.
+
 ## Ordem obrigatória
 
 1. Carregar fontes e tokens.
@@ -91,4 +95,3 @@
 - Logo e ícones devem ser arquivos oficiais, não cópias desenhadas no JSX.
 - Não aceitar componentes padrão sem tematização.
 - Fotografias provisórias devem estar marcadas para substituição/licença.
-

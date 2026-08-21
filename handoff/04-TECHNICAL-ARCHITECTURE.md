@@ -1,9 +1,13 @@
 # Arquitetura técnica recomendada
 
+## Nota sobre a implementação atual
+
+O código existente usa Vinext, Vite e um worker Cloudflare. Esta documentação descreve a arquitetura de destino. Antes da Vercel, migrar o runtime para Next.js nativo com App Router, preservando componentes, CSS, tokens, rotas e comportamento existentes. Não reconstruir a interface nem introduzir um novo tema.
+
 ## Stack
 
 - Next.js com App Router, TypeScript e renderização híbrida.
-- Tailwind CSS com tokens do `design-tokens.json`; componentes próprios, sem tema visual genérico.
+- CSS e componentes próprios com tokens do `design-tokens.json`, sem tema visual genérico. Tailwind só deve ser adotado se houver benefício comprovado e sem reescrever desnecessariamente o sistema aprovado.
 - Supabase para Postgres, Auth, Storage, Edge Functions e Cron.
 - MapLibre GL JS para o mapa.
 - Vercel para previews e hospedagem conforme licença do plano.
@@ -67,4 +71,3 @@ O algoritmo deve ser configurável por praia, versionado e acompanhado por texto
 - Local: Supabase local/Mailpit e dados de demonstração.
 - Preview: projeto de teste, sem cobrança real e APIs em modo de avaliação.
 - Produção: domínio oficial, SMTP, backups, provedor comercial de previsão e plano de hospedagem compatível com monetização.
-
