@@ -1,4 +1,5 @@
 import { beaches } from "./lib/beaches";
+import { LEGAL_LINKS } from "./lib/legal";
 
 const MarineIcon = ({ name }: { name: string }) => <svg aria-hidden="true"><use href={`/handoff-assets/quipraia-icons.svg#icon-${name}`} /></svg>;
 
@@ -50,6 +51,10 @@ export default function Home() {
     </section>
 
     <aside className="hot-ad hot-shell"><strong>Anuncie aqui</strong><span>Fortaleça o movimento surf e conecte sua marca à comunidade.</span><a href="mailto:anuncie@quipraia.com">Quero anunciar →</a></aside>
-    <footer className="hot-footer hot-shell"><img src="/brand/final/quipraia-3c-lockup-dark-approved.svg" alt="QuiPraia: Qual praia hoje?"/><span>Salvador, BA · Swell · Maré · Vento</span></footer>
+    <footer className="hot-footer hot-shell">
+      <img src="/brand/final/quipraia-3c-lockup-dark-approved.svg" alt="QuiPraia: Qual praia hoje?"/>
+      <nav className="hot-footer-legal" aria-label="Links legais">{LEGAL_LINKS.map(([label, href]) => <a href={href} key={href}>{label}</a>)}</nav>
+      <span>Salvador, BA · Swell · Maré · Vento</span>
+    </footer>
   </main>;
 }
