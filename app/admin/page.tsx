@@ -50,15 +50,7 @@ export default function AdminPage() {
     <main className="admin-shell">
       <aside className="admin-sidebar">
         <a className="admin-brand" href="/">
-          <span className="quipraia-logo-mark" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </span>
-          <span className="quipraia-wordmark">
-            <b>qui</b>
-            <em>praia</em>
-          </span>
+          <img src="/brand/final/quipraia-3c-wordmark-dark-approved.svg" alt="QuiPraia" />
         </a>
         <span className="admin-label">ADMINISTRAÇÃO</span>
         <nav>
@@ -284,15 +276,7 @@ function AdminLogin({ onSuccess }: { onSuccess: () => void }) {
     <main className="admin-login">
       <div className="admin-login-card">
         <a className="admin-brand" href="/">
-          <span className="quipraia-logo-mark" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </span>
-          <span className="quipraia-wordmark">
-            <b>qui</b>
-            <em>praia</em>
-          </span>
+          <img src="/brand/final/quipraia-3c-wordmark-dark-approved.svg" alt="QuiPraia" />
         </a>
         <span className="admin-label">ACESSO ADMINISTRATIVO</span>
         <h1>
