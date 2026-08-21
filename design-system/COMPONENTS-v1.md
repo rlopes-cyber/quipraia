@@ -1,4 +1,4 @@
-# QuiPraia — componentes v1
+# QuiPraia: componentes v1
 
 ## Button
 
@@ -33,7 +33,7 @@ Variantes: compacta para mapa, horizontal para comparação e editorial para des
 
 Propriedades: `type`, `value`, `unit`, `direction`, `trend`, `timestamp`, `source`, `confidence`.
 
-Variantes: swell, período, vento, maré, temperatura e chuva. O valor é dominante; ícone e cor são apoio. Dados indisponíveis mostram `—` e a razão, nunca `0`.
+Variantes: swell, período, vento, maré, temperatura e chuva. O valor é dominante; ícone e cor são apoio. Dados indisponíveis mostram `N/D` e a razão, nunca `0`.
 
 ## Time Rail
 

@@ -2,31 +2,31 @@
 
 ## Rotas públicas
 
-- `/` — hotsite.
-- `/entrar` — Google ou e-mail/senha.
-- `/criar-conta` — Google ou cadastro tradicional.
+- `/`: hotsite.
+- `/entrar`: Google ou e-mail/senha.
+- `/criar-conta`: Google ou cadastro tradicional.
 - `/recuperar-senha` e `/redefinir-senha`.
 - `/termos` e `/privacidade`.
 
 ## Rotas autenticadas
 
-- `/app` — home “Qual praia hoje?”.
-- `/app/mapa` — mapa de sessões.
-- `/app/praias/[slug]` — detalhe da praia.
-- `/app/comparar?praias=` — comparação de até três praias.
-- `/app/comunidade` — relatos recentes e filtros.
-- `/app/perfil` — conta, nível, favoritos, alertas e plano.
-- `/app/planos` — Gratuito versus Colaborador.
+- `/app`: home “Qual praia hoje?”.
+- `/app/mapa`: mapa de sessões.
+- `/app/praias/[slug]`: detalhe da praia.
+- `/app/comparar?praias=`: comparação de até três praias.
+- `/app/comunidade`: relatos recentes e filtros.
+- `/app/perfil`: conta, nível, favoritos, alertas e plano.
+- `/app/planos`: Gratuito versus Colaborador.
 
 ## Rotas administrativas
 
-- `/admin` — visão geral.
-- `/admin/praias` — cadastro e publicação.
-- `/admin/usuarios` — usuários, função e plano.
-- `/admin/relatos` — moderação.
-- `/admin/anuncios` — campanhas e posições.
-- `/admin/integracoes` — saúde das APIs e sincronizações.
-- `/admin/auditoria` — ações administrativas.
+- `/admin`: visão geral.
+- `/admin/praias`: cadastro e publicação.
+- `/admin/usuarios`: usuários, função e plano.
+- `/admin/relatos`: moderação.
+- `/admin/anuncios`: campanhas e posições.
+- `/admin/integracoes`: saúde das APIs e sincronizações.
+- `/admin/auditoria`: ações administrativas.
 
 ## Fluxo de aquisição
 

@@ -1,10 +1,10 @@
-# QuiPraia — sistema de dados do mar v1
+# QuiPraia: sistema de dados do mar v1
 
 ## Princípio
 
 Cada fenômeno recebe uma visualização própria. Maré, swell e vento nunca reutilizam o mesmo gráfico apenas trocando o título.
 
-## Maré — Tide Curve
+## Maré: Tide Curve
 
 **Forma:** curva contínua com preenchimento leve em Tide, linha de agora Coral e pontos explícitos de alta/baixa.
 
@@ -19,7 +19,7 @@ Exibir:
 
 Interação: arrastar ou usar setas move o cursor; tooltip mostra hora e altura. Mobile usa scroll horizontal sem reduzir rótulos abaixo de `12 px`. Uma tabela com hora/altura acompanha o gráfico para acessibilidade.
 
-## Ondas — Swell Stack
+## Ondas: Swell Stack
 
 Usar três camadas coordenadas:
 
@@ -29,7 +29,7 @@ Usar três camadas coordenadas:
 
 Exemplo: `1,2–1,6 m · 11 s · ESE 112°`. Swell primário e secundário ficam separados quando a API fornecer ambos.
 
-## Vento — Wind Track
+## Vento: Wind Track
 
 **Forma:** linha de velocidade + faixa de rajadas + setas de direção em intervalos regulares.
 

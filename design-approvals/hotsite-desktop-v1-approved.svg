@@ -29,7 +29,7 @@
   <text x="100" y="172" class="label" font-size="11" fill="#9FD3C6">PREVISÃO + COMUNIDADE SURF</text>
   <text x="100" y="244" class="display" font-size="58">Qual praia hoje?</text>
   <text x="100" y="292" class="title" font-size="24">Decida melhor. Chegue na hora certa.</text>
-  <text x="100" y="337" class="body" font-size="17" fill="#E1E9ED">Maré, ondas, vento e relatos de quem está na água —</text>
+  <text x="100" y="337" class="body" font-size="17" fill="#E1E9ED">Maré, ondas, vento e relatos de quem está na água: </text>
   <text x="100" y="364" class="body" font-size="17" fill="#E1E9ED">reunidos em uma leitura simples para o seu próximo surf.</text>
   <rect x="100" y="408" width="250" height="56" rx="16" fill="#FF6B57"/>
   <rect x="126" y="425" width="22" height="17" rx="3" fill="none" stroke="#F4F6F7" stroke-width="2"/><path d="M127 427l10 8 10-8" stroke="#F4F6F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

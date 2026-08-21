@@ -1,4 +1,4 @@
-# QuiPraia — Brand Lock 3C
+# QuiPraia: Brand Lock 3C
 
 ## Status
 

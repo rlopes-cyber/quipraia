@@ -162,6 +162,6 @@
   <text x="1080" y="926" class="title" font-size="14">Anuncie aqui. Fortaleça o movimento surf.</text>
   <path d="M1460 904h16M1469 895l9 9-9 9" stroke="#FF6B57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <text x="72" y="1008" class="body" font-size="12">Regra-mãe: uma função, um componente, uma leitura visual. Estados usam cor + forma + texto — nunca apenas cor.</text>
+  <text x="72" y="1008" class="body" font-size="12">Regra-mãe: uma função, um componente, uma leitura visual. Estados usam cor + forma + texto: nunca apenas cor.</text>
   <text x="1528" y="1008" text-anchor="end" class="label" font-size="10">CANDIDATO À APROVAÇÃO</text>
 </svg>

@@ -1,10 +1,10 @@
-# QuiPraia — pacote de produto e handoff
+# QuiPraia: pacote de produto e handoff
 
 Este diretório é a fonte de verdade para programar o MVP da QuiPraia. Ele consolida as decisões aprovadas e impede que marca, iconografia ou layout sejam reinterpretados durante a implementação.
 
 ## Estado das decisões
 
-- Marca oficial: **QuiPraia — direção 3C Performance**.
+- Marca oficial: **QuiPraia: direção 3C Performance**.
 - Frase principal: **Qual praia hoje?**
 - Linha de apoio: **Swell · Maré · Vento**.
 - Público inicial: surfistas em Salvador.

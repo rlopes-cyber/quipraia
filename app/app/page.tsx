@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 const Icon=({name}:{name:string})=><svg aria-hidden="true"><use href={`/handoff-assets/quipraia-icons.svg#icon-${name}`}/></svg>;
 const Metric=({name,label,value}:{name:string,label:string,value:string})=><div className="approved-metric"><Icon name={name}/><span>{label}<strong>{value}</strong></span></div>;
 

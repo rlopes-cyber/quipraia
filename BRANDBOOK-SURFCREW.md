@@ -1,4 +1,4 @@
-# SurfCrew — Brandbook v1.0
+# SurfCrew: Brandbook v1.0
 
 ## 1. Essência
 
@@ -171,12 +171,12 @@ O mapa é uma ferramenta de decisão. Cada marcador deve responder rapidamente:
 
 ## 10. Slogans possíveis
 
-- SurfCrew — escolha a próxima sessão.
-- SurfCrew — informação do mar com olhar de crew.
-- SurfCrew — o pico muda. A crew avisa.
-- SurfCrew — leia o mar. Encontre sua sessão.
+- SurfCrew: escolha a próxima sessão.
+- SurfCrew: informação do mar com olhar de crew.
+- SurfCrew: o pico muda. A crew avisa.
+- SurfCrew: leia o mar. Encontre sua sessão.
 
-Recomendação principal: **SurfCrew — escolha a próxima sessão.**
+Recomendação principal: **SurfCrew: escolha a próxima sessão.**
 
 ## 11. Regras de uso
 

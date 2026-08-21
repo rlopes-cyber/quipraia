@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const sora = Sora({ subsets: ["latin"], variable: "--font-sora" });
 
 export const metadata: Metadata = {
-  title: "QuiPraia — Qual praia hoje?",
+  title: "QuiPraia: Qual praia hoje?",
   description: "Previsão de surf, maré, vento e relatos locais das praias de Salvador.",
   icons: { icon: "/brand/final/quipraia-3c-symbol.svg" },
 };

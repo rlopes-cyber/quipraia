@@ -16,7 +16,7 @@ export default function Home() {
           <span className="hot-kicker">Previsão + comunidade surf</span>
           <h1>Qual praia hoje?</h1>
           <h2>Decida melhor. Chegue na hora certa.</h2>
-          <p>Maré, ondas, vento e relatos de quem está na água — reunidos em uma leitura simples para o seu próximo surf.</p>
+          <p>Maré, ondas, vento e relatos de quem está na água: reunidos em uma leitura simples para o seu próximo surf.</p>
           <div className="hot-actions"><a className="hot-button" href="/cadastro">✉ <strong>Criar conta com e-mail</strong></a><a className="hot-button outline" href="/entrar?provider=google"><i>G</i><strong>Continuar com Google</strong></a></div>
           <small>Escolha Google ou cadastro com e-mail · sem cartão · acesso gratuito</small>
           <ul><li>Começando por Salvador</li><li>Dados atualizados</li><li>Feito para surfistas</li></ul>
@@ -43,6 +43,6 @@ export default function Home() {
     </section>
 
     <aside className="hot-ad hot-shell"><strong>Anuncie aqui</strong><span>Fortaleça o movimento surf e conecte sua marca à comunidade.</span><a href="mailto:anuncie@quipraia.com">Quero anunciar →</a></aside>
-    <footer className="hot-footer hot-shell"><img src="/brand/final/quipraia-3c-lockup-dark-approved.svg" alt="QuiPraia — Qual praia hoje?"/><span>Salvador, BA · Swell · Maré · Vento</span></footer>
+    <footer className="hot-footer hot-shell"><img src="/brand/final/quipraia-3c-lockup-dark-approved.svg" alt="QuiPraia: Qual praia hoje?"/><span>Salvador, BA · Swell · Maré · Vento</span></footer>
   </main>;
 }

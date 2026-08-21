@@ -1,4 +1,4 @@
-# Bloqueio do design system — QuiPraia 3C
+# Bloqueio do design system: QuiPraia 3C
 
 ## Fonte única de verdade
 

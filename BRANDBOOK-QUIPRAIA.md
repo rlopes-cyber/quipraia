@@ -1,4 +1,8 @@
-# QuiPraia — direção de marca 3C aprovada
+# QuiPraia: direção de marca 3C aprovada
+
+## Regra editorial
+
+Não usar travessão em textos de interface, campanhas, documentação ou apresentações. Preferir ponto, vírgula, dois-pontos ou parênteses, conforme a estrutura da frase. Para dados indisponíveis, usar `N/D`.
 
 ## Ideia central
 

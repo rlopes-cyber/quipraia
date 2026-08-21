@@ -23,8 +23,8 @@
     <circle cx="495" cy="351" r="34" fill="#FF6B57"/><text x="473" y="408">Coral</text><text x="460" y="429">#FF6B57</text>
     <circle cx="625" cy="351" r="34" fill="#6B8194"/><text x="590" y="408">Silver Blue</text><text x="590" y="429">#6B8194</text>
   </g>
-  <text x="70" y="477" fill="#0B1D2D" font-family="Sora, Arial" font-size="24" font-weight="700">Sora — decisões e métricas</text>
-  <text x="420" y="477" fill="#52697B" font-family="Inter, Arial" font-size="18">Inter — interface, dados e leitura longa</text>
+  <text x="70" y="477" fill="#0B1D2D" font-family="Sora, Arial" font-size="24" font-weight="700">Sora: decisões e métricas</text>
+  <text x="420" y="477" fill="#52697B" font-family="Inter, Arial" font-size="18">Inter: interface, dados e leitura longa</text>
 
   <text x="800" y="255" fill="#0B1D2D" font-family="Sora, Arial" font-size="22" font-weight="700">COMPONENTES</text>
   <rect x="800" y="278" width="760" height="235" rx="20" fill="white" stroke="#D8E0E5"/>

@@ -1,4 +1,4 @@
-# PRD — QuiPraia MVP
+# PRD: QuiPraia MVP
 
 ## Problema
 
