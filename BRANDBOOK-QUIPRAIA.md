@@ -106,6 +106,15 @@ A marca deve ser confiante, mas respeitar a incerteza natural da previsão e a e
 - Banner: `Qual praia hoje?` em tipografia grande, foto de mar e CTA em verde mar.
 - Mapa: símbolo compacto no marcador ativo; nunca colocar o logo inteiro dentro de um pin pequeno.
 
+## Direção fotográfica
+
+- Priorizar fotografia editorial horizontal, com textura natural e condições de mar plausíveis.
+- Mostrar a costa de Salvador com luz quente, vegetação tropical e presença humana discreta.
+- Usar planos abertos para preservar a leitura dos dados sobre a imagem.
+- Identificar imagens produzidas para o conceito como “Imagem editorial QuiPraia”.
+- Evitar ondas irreais, saturação excessiva, poses publicitárias e cenários que pareçam Califórnia ou Havaí.
+- Nas telas de decisão, a imagem contextualiza a praia; condição, horário e métricas continuam sendo a informação principal.
+
 ## Não fazer
 
 - Não usar clipart de prancha atrás do texto.

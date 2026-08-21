@@ -19,6 +19,8 @@ test("renders the QuiPraia hotsite with approved brand and plans", async () => {
   assert.match(html, /Continuar com Google/);
   assert.match(html, /R\$ 9,90/);
   assert.match(html, /Fortaleça o movimento surf/);
+  assert.match(html, /Veja a praia antes de escolher/);
+  assert.match(html, /quipraia-praia-do-flamengo-v1\.jpg/);
   assert.doesNotMatch(html, /Ondai|adm\*123|adm@ondai/i);
 });
 
@@ -45,9 +47,9 @@ test("renders the authenticated product home", async () => {
 
 test("renders the core product journeys", async () => {
   const expectations = [
-    ["/mapa", [/Mapa de sessões/, /Praia do Flamengo/, /Stella Maris/]],
-    ["/comparar", [/Comparar praias/, /Jaguaribe/, /\+12h/]],
-    ["/praias/stella-maris", [/Stella Maris/, /Janela da sessão/, /Ondas/, /Período/, /Vento/, /Maré/]],
+    ["/mapa", [/Mapa de sessões/, /Praia do Flamengo/, /Stella Maris/, /Imagem editorial QuiPraia/]],
+    ["/comparar", [/Comparar praias/, /Jaguaribe/, /\+12h/, /quipraia-jaguaribe-v1\.jpg/]],
+    ["/praias/stella-maris", [/Stella Maris/, /Janela da sessão/, /Ondas/, /Período/, /Vento/, /Maré/, /Explore a costa/]],
     ["/comunidade", [/Relatar condição/, /De quem está na água/, /Pulso da comunidade/]],
     ["/perfil", [/Praias favoritas/, /Melhor janela/, /Colaborador/]],
   ];
