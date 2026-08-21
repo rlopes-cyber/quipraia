@@ -48,6 +48,10 @@ alter table public.favorites enable row level security;
 alter table public.reports enable row level security;
 alter table public.report_confirmations enable row level security;
 
+revoke all on public.profiles, public.favorites, public.reports, public.report_confirmations from anon;
+grant select on public.profiles, public.favorites, public.reports, public.report_confirmations to authenticated;
+grant insert, delete on public.favorites, public.report_confirmations to authenticated;
+grant insert, update, delete on public.reports to authenticated;
 revoke update on public.profiles from authenticated;
 grant update (name, city, surf_level, alerts_enabled, updated_at) on public.profiles to authenticated;
 
@@ -90,3 +94,17 @@ $$;
 create trigger on_auth_user_created
 after insert on auth.users
 for each row execute procedure public.handle_new_user();
+
+create or replace function public.set_updated_at()
+returns trigger
+language plpgsql
+as $$
+begin
+  new.updated_at = now();
+  return new;
+end;
+$$;
+
+create trigger profiles_set_updated_at
+before update on public.profiles
+for each row execute procedure public.set_updated_at();

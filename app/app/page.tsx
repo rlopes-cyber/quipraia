@@ -1,9 +1,11 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
+import { UserIdentity } from "../components/UserIdentity";
+
 const Icon=({name}:{name:string})=><svg aria-hidden="true"><use href={`/handoff-assets/quipraia-icons.svg#icon-${name}`}/></svg>;
 const Metric=({name,label,value}:{name:string,label:string,value:string})=><div className="approved-metric"><Icon name={name}/><span>{label}<strong>{value}</strong></span></div>;
 
 export default function AppHome(){return <main className="approved-app">
-  <aside className="approved-side"><img src="/brand/final/quipraia-3c-wordmark-dark-approved.svg" alt="QuiPraia"/><small>Previsão de surf</small><nav><a className="active" href="/app"><Icon name="waves"/>Hoje</a><a href="/mapa"><Icon name="map"/>Mapa</a><a href="/comparar"><Icon name="compare"/>Comparar</a><a href="/comunidade"><Icon name="community"/>Comunidade</a><a href="/perfil"><Icon name="profile"/>Perfil</a></nav><div className="approved-user"><b>RL</b><span><strong>Ricardo</strong><small>Colaborador</small></span></div></aside>
+  <aside className="approved-side"><img src="/brand/final/quipraia-3c-wordmark-dark-approved.svg" alt="QuiPraia"/><small>Previsão de surf</small><nav><a className="active" href="/app"><Icon name="waves"/>Hoje</a><a href="/mapa"><Icon name="map"/>Mapa</a><a href="/comparar"><Icon name="compare"/>Comparar</a><a href="/comunidade"><Icon name="community"/>Comunidade</a><a href="/perfil"><Icon name="profile"/>Perfil</a></nav><UserIdentity className="approved-user" /></aside>
   <section className="approved-main">
     <header><div><small>Quinta, 20 de agosto</small><h1>Qual praia hoje?</h1></div><label>⌕ <input aria-label="Buscar praia ou cidade" placeholder="Buscar praia ou cidade"/></label><button>● Salvador, BA</button></header>
     <div className="approved-grid">

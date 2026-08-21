@@ -2,15 +2,17 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 
 import { FormEvent, useState } from "react";
+import { friendlyAuthError, safeAuthDestination } from "../lib/auth-paths";
 import { signInWithGoogle, signInWithPassword, signUpWithPassword } from "../lib/supabase";
 type AuthScreenProps = { mode: "login" | "signup" };
 
-export function AuthScreen({ mode }: AuthScreenProps) {
+export function AuthScreen({ mode, initialMessage = "" }: AuthScreenProps & { initialMessage?: string }) {
   const signup = mode === "signup";
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState(initialMessage);
   const [loading, setLoading] = useState(false);
-  async function google() { setLoading(true); const result = await signInWithGoogle(); if (!result.configured) { window.location.href = "/app?modo=demonstracao"; return; } if (result.error) setMessage(result.error.message); setLoading(false); }
-  async function submit(event: FormEvent<HTMLFormElement>) { event.preventDefault(); setLoading(true); setMessage(""); const form = new FormData(event.currentTarget); const email = String(form.get("email") ?? ""); const password = String(form.get("password") ?? ""); const result = signup ? await signUpWithPassword(String(form.get("name") ?? ""), email, password) : await signInWithPassword(email, password); if (!result.configured) { window.location.href = "/app?modo=demonstracao"; return; } if (result.error) setMessage(result.error.message); else if (signup) setMessage("Conta criada. Verifique seu e-mail para confirmar o acesso."); else window.location.href = "/app"; setLoading(false); }
+  function destination() { return safeAuthDestination(new URLSearchParams(window.location.search).get("returnTo")); }
+  async function google() { setLoading(true); const result = await signInWithGoogle(destination()); if (!result.configured) { window.location.href = `${destination()}${destination().includes("?") ? "&" : "?"}modo=demonstracao`; return; } if (result.error) setMessage(friendlyAuthError(result.error.message)); setLoading(false); }
+  async function submit(event: FormEvent<HTMLFormElement>) { event.preventDefault(); setLoading(true); setMessage(""); const form = new FormData(event.currentTarget); const email = String(form.get("email") ?? ""); const password = String(form.get("password") ?? ""); const result = signup ? await signUpWithPassword(String(form.get("name") ?? ""), email, password, destination()) : await signInWithPassword(email, password); if (!result.configured) { window.location.href = `${destination()}${destination().includes("?") ? "&" : "?"}modo=demonstracao`; return; } if (result.error) setMessage(friendlyAuthError(result.error.message)); else if (signup && result.data.session) window.location.href = destination(); else if (signup) setMessage("Conta criada. Confira seu e-mail para confirmar o acesso."); else window.location.href = destination(); setLoading(false); }
   return <main className="approved-auth">
     <a className="approved-auth-brand" href="/"><img src="/brand/final/quipraia-3c-wordmark-dark-approved.svg" alt="QuiPraia" /></a>
     <section className="approved-auth-card">
@@ -24,7 +26,7 @@ export function AuthScreen({ mode }: AuthScreenProps) {
         {signup ? <label>Nome<input required name="name" autoComplete="name" placeholder="Como quer ser chamado?" /></label> : null}
         <label>E-mail<input required type="email" name="email" autoComplete="email" placeholder="voce@email.com" /></label>
         <label>{signup ? "Criar senha" : "Senha"}<input required minLength={8} type="password" name="password" autoComplete={signup ? "new-password" : "current-password"} placeholder={signup ? "Mínimo de 8 caracteres" : "••••••••"} /></label>
-        {signup ? <label className="approved-check"><input required type="checkbox"/> Li e aceito os Termos de Uso e a Política de Privacidade.</label> : <div className="approved-options"><label><input type="checkbox"/> Manter conectado</label><a href="/recuperar-senha">Esqueci minha senha</a></div>}
+        {signup ? <label className="approved-check"><input required type="checkbox"/> Li e aceito os Termos de Uso e a Política de Privacidade.</label> : <div className="approved-options"><span>Sessão protegida</span><a href="/recuperar-senha">Esqueci minha senha</a></div>}
         {message ? <p className="auth-feedback" role="status">{message}</p> : null}
         <button className="hot-button" type="submit" disabled={loading}>{loading ? "Aguarde" : signup ? "Criar minha conta" : "Entrar"}</button>
       </form>

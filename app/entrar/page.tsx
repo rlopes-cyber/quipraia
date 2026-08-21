@@ -1,2 +1,7 @@
 import { AuthScreen } from "../components/AuthScreen";
-export default function LoginPage() { return <AuthScreen mode="login" />; }
+import { authMessageFromCode } from "../lib/auth-paths";
+
+export default async function LoginPage({ searchParams }: { searchParams: Promise<{ erro?: string; status?: string }> }) {
+  const params = await searchParams;
+  return <AuthScreen mode="login" initialMessage={authMessageFromCode(params.erro ?? params.status ?? null)} />;
+}

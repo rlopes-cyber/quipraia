@@ -14,8 +14,9 @@ O banco inclui perfis, praias favoritas, relatos e confirmações. As políticas
 ## 2. Configurar o Google
 
 1. Crie credenciais OAuth no Google Cloud Console.
-2. Cadastre a URL de retorno exibida pelo Supabase em Authentication, Providers, Google.
+2. No Google, use como URI autorizada a URL do Supabase no formato `https://SEU-PROJETO.supabase.co/auth/v1/callback`.
 3. Informe Client ID e Client Secret apenas no painel do Supabase.
+4. No Supabase, configure `http://localhost:3001/auth/callback` e a URL de produção em Redirect URLs.
 
 O usuário poderá entrar pelo Google ou criar conta com e-mail e senha.
 
@@ -40,7 +41,21 @@ npm run dev
 
 Abra `http://localhost:3001`. Sem as variáveis, o sistema mantém o modo de demonstração. Com as variáveis, login por Google e e-mail usam o Supabase.
 
-## 5. Publicar na Vercel
+Rotas internas como `/app`, `/mapa`, `/comparar`, `/comunidade`, `/perfil` e `/praias` passam a exigir uma sessão válida. O painel `/admin` também exige que o perfil tenha a função `admin`.
+
+## 5. Definir o administrador
+
+Depois de criar sua conta normalmente, execute no SQL Editor, substituindo o e-mail:
+
+```sql
+update public.profiles
+set role = 'admin'
+where id = (select id from auth.users where email = 'seu-email@exemplo.com');
+```
+
+Não crie senha administrativa no código e não exponha a chave `service_role` no navegador.
+
+## 6. Publicar na Vercel
 
 Cadastre as mesmas três variáveis nas configurações do projeto na Vercel. Troque `NEXT_PUBLIC_SITE_URL` pelo domínio final e inclua essa URL nas URLs permitidas do Supabase e do Google.
 

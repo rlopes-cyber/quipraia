@@ -35,6 +35,28 @@ test("renders both authentication choices", async () => {
   }
 });
 
+test("renders password recovery and update flows", async () => {
+  const recovery = await render("/recuperar-senha");
+  assert.equal(recovery.status, 200);
+  const recoveryHtml = await recovery.text();
+  assert.match(recoveryHtml, /Vamos recuperar sua conta/);
+  assert.match(recoveryHtml, /Enviar link de recuperação/);
+
+  const update = await render("/nova-senha");
+  assert.equal(update.status, 200);
+  const updateHtml = await update.text();
+  assert.match(updateHtml, /Crie uma nova senha/);
+  assert.match(updateHtml, /Salvar nova senha/);
+});
+
+test("keeps authentication callbacks safe in demonstration mode", async () => {
+  const response = await render("/auth/callback?next=//site-malicioso.example");
+  assert.ok([302, 303, 307, 308].includes(response.status));
+  const location = response.headers.get("location") ?? "";
+  assert.match(location, /^http:\/\/localhost\/app\?modo=demonstracao$/);
+  assert.doesNotMatch(location, /site-malicioso/);
+});
+
 test("renders the authenticated product home", async () => {
   const response = await render("/app");
   assert.equal(response.status, 200);
@@ -43,6 +65,7 @@ test("renders the authenticated product home", async () => {
   assert.match(html, /Condição atual/);
   assert.match(html, /Curva e extremos/);
   assert.match(html, /icon-waves/);
+  assert.match(html, /Sair da conta/);
 });
 
 test("renders the core product journeys", async () => {
