@@ -1,6 +1,7 @@
 "use client";
+/* eslint-disable @next/next/no-html-link-for-pages */
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const reports = [
   {
@@ -27,32 +28,20 @@ const reports = [
 ];
 
 export default function AdminPage() {
-  const [authenticated, setAuthenticated] = useState(false);
-  const [checking, setChecking] = useState(true);
+  const [authenticated, setAuthenticated] = useState(() =>
+    typeof window !== "undefined" && window.localStorage.getItem("quipraia-admin-auth") === "true"
+  );
   const [section, setSection] = useState("Visão geral");
-  const [reportState, setReportState] = useState(reports);
-  useEffect(() => {
-    setAuthenticated(
-      window.localStorage.getItem("ondai-admin-auth") === "true",
-    );
-    const savedReports = window.localStorage.getItem("ondai-reports");
-    if (savedReports) setReportState([...JSON.parse(savedReports), ...reports]);
-    setChecking(false);
-  }, []);
-  if (checking)
-    return (
-      <main className="admin-login">
-        <div className="admin-login-card">
-          <span className="admin-label">QUIPRAIA</span>
-          <h1>Carregando painel</h1>
-        </div>
-      </main>
-    );
+  const [reportState, setReportState] = useState(() => {
+    if (typeof window === "undefined") return reports;
+    const saved = window.localStorage.getItem("quipraia-reports");
+    return saved ? [...JSON.parse(saved), ...reports] : reports;
+  });
   if (!authenticated)
     return (
       <AdminLogin
         onSuccess={() => {
-          window.localStorage.setItem("ondai-admin-auth", "true");
+          window.localStorage.setItem("quipraia-admin-auth", "true");
           setAuthenticated(true);
         }}
       />
@@ -213,7 +202,7 @@ export default function AdminPage() {
                 <span className="eyebrow">MODERAÇÃO</span>
                 <h2>Relatos da comunidade</h2>
               </div>
-              <button className="admin-filter">Filtrar　≡</button>
+              <button className="admin-filter">Filtrar ≡</button>
             </div>
             {reportState.map((report, index) => (
               <div className="moderation-row" key={`${report.author}-${index}`}>
@@ -285,10 +274,9 @@ function AdminLogin({ onSuccess }: { onSuccess: () => void }) {
   const [error, setError] = useState("");
   function submit(event: React.FormEvent) {
     event.preventDefault();
-    if (
-      email.trim().toLowerCase() === "adm@ondai.com" &&
-      password === "adm*123"
-    )
+    const demoEmail = process.env.NEXT_PUBLIC_DEMO_ADMIN_EMAIL;
+    const demoPassword = process.env.NEXT_PUBLIC_DEMO_ADMIN_PASSWORD;
+    if (demoEmail && demoPassword && email.trim().toLowerCase() === demoEmail.toLowerCase() && password === demoPassword)
       onSuccess();
     else setError("E-mail ou senha incorretos.");
   }
@@ -323,7 +311,7 @@ function AdminLogin({ onSuccess }: { onSuccess: () => void }) {
               type="email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
-              placeholder="adm@ondai.com"
+              placeholder="admin@quipraia.com"
             />
           </label>
           <label>
