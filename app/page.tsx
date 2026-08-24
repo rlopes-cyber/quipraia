@@ -1,9 +1,12 @@
 import { beaches } from "./lib/beaches";
 import { LEGAL_LINKS } from "./lib/legal";
+import { getLiveConditions } from "./lib/beach-conditions";
 
 const MarineIcon = ({ name }: { name: string }) => <svg aria-hidden="true"><use href={`/handoff-assets/quipraia-icons.svg#icon-${name}`} /></svg>;
 
-export default function Home() {
+export default async function Home() {
+  const featured = [beaches[0], beaches[1], beaches[2], beaches[4]];
+  const conditions = await getLiveConditions(featured);
   return <main className="hot-page">
     <header className="hot-header hot-shell">
       <a href="#inicio"><img src="/brand/final/quipraia-3c-wordmark-dark-approved.svg" alt="QuiPraia" /></a>
@@ -39,7 +42,7 @@ export default function Home() {
 
     <section className="hot-beaches hot-shell" id="praias">
       <div className="hot-section-heading"><div><span className="hot-kicker">Salvador de ponta a ponta</span><h2>Veja a praia antes de escolher.</h2></div><a href="/mapa">Explorar todas as praias →</a></div>
-      <div>{[beaches[0], beaches[1], beaches[2], beaches[4]].map((beach) => <a href={`/praias/${beach.slug}`} key={beach.slug}><img loading="lazy" src={beach.image} style={{ objectPosition: beach.imagePosition }} alt={`Vista editorial de ${beach.name}`} /><span><strong>{beach.name}</strong><small><b className={beach.condition.toLowerCase()}>{beach.condition}</b>{beach.wave.toFixed(1)} m · {beach.period} s</small></span></a>)}</div>
+      <div>{featured.map((beach) => { const live = conditions.get(beach.slug); const wave = live?.waveHeight ?? beach.wave; const period = live?.wavePeriod ?? beach.period; const condition = live?.condition ?? beach.condition; return <a href={`/praias/${beach.slug}`} key={beach.slug}><img loading="lazy" src={beach.image} style={{ objectPosition: beach.imagePosition }} alt={`Vista editorial de ${beach.name}`} /><span><strong>{beach.name}</strong><small><b className={condition.toLowerCase()}>{condition}</b>{wave.toFixed(1)} m · {Math.round(period)} s</small></span></a>; })}</div>
     </section>
 
     <section className="hot-plans hot-shell" id="planos">
