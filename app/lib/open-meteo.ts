@@ -21,7 +21,12 @@ export async function fetchOpenMeteoForecast(beach: Beach): Promise<ForecastPoin
   if (!marineResponse.ok || !weatherResponse.ok) throw new Error("Não foi possível atualizar a previsão modelada.");
   const [marine, weather] = await Promise.all([marineResponse.json() as Promise<HourlyResponse>, weatherResponse.json() as Promise<HourlyResponse>]);
   const times = marine.hourly?.time ?? [];
-  return times.map((time, index) => ({ time: String(time), waveHeight: numberAt(marine.hourly?.wave_height, index), wavePeriod: numberAt(marine.hourly?.wave_period, index), waveDirection: numberAt(marine.hourly?.wave_direction, index), windSpeed: numberAt(weather.hourly?.wind_speed_10m, index), windDirection: numberAt(weather.hourly?.wind_direction_10m, index), seaLevel: numberAt(marine.hourly?.sea_level_height_msl, index) }));
+  // Open-Meteo retorna horários locais "soltos" (ex.: 2026-08-24T18:00), sem offset de fuso.
+  // Sem o offset explícito, o navegador do visitante interpretaria esse horário no SEU fuso local
+  // (não no fuso da Bahia), o que pode selecionar a hora errada como "agora" e mostrar
+  // maré/onda de um horário diferente do real. A Bahia não observa horário de verão desde 2019,
+  // então o offset -03:00 é sempre correto aqui.
+  return times.map((time, index) => ({ time: `${String(time)}-03:00`, waveHeight: numberAt(marine.hourly?.wave_height, index), wavePeriod: numberAt(marine.hourly?.wave_period, index), waveDirection: numberAt(marine.hourly?.wave_direction, index), windSpeed: numberAt(weather.hourly?.wind_speed_10m, index), windDirection: numberAt(weather.hourly?.wind_direction_10m, index), seaLevel: numberAt(marine.hourly?.sea_level_height_msl, index) }));
 }
 
 function numberAt(values: Array<string | number | null> | undefined, index: number) { const value = values?.[index]; return typeof value === "number" ? value : null; }
