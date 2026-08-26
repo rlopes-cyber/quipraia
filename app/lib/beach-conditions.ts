@@ -5,8 +5,11 @@ import { conditionFromScore, scoreFromForecast, type Condition } from "./conditi
 export type LiveCondition = {
   waveHeight: number | null;
   wavePeriod: number | null;
+  waveDirection: number | null;
   windSpeed: number | null;
   windDirection: number | null;
+  seaLevel: number | null;
+  waterTemperature: number | null;
   condition: Condition;
   score: number | null;
   live: boolean;
@@ -32,14 +35,19 @@ export async function getLiveCondition(beach: Beach): Promise<LiveCondition> {
     return {
       waveHeight: point?.waveHeight ?? null,
       wavePeriod: point?.wavePeriod ?? null,
+      waveDirection: point?.waveDirection ?? null,
       windSpeed: point?.windSpeed ?? null,
-      windDirection: point?.waveDirection ?? null,
+      // BUG corrigido: antes este campo pegava point?.waveDirection (duplicando a direção da onda
+      // e nunca mostrando a direção real do vento nos cards que usam LiveCondition).
+      windDirection: point?.windDirection ?? null,
+      seaLevel: point?.seaLevel ?? null,
+      waterTemperature: point?.waterTemperature ?? null,
       condition: conditionFromScore(score),
       score,
       live: point != null,
     };
   } catch {
-    return { waveHeight: null, wavePeriod: null, windSpeed: null, windDirection: null, condition: beach.condition, score: beach.score, live: false };
+    return { waveHeight: null, wavePeriod: null, waveDirection: null, windSpeed: null, windDirection: null, seaLevel: null, waterTemperature: null, condition: beach.condition, score: beach.score, live: false };
   }
 }
 

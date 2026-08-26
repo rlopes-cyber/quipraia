@@ -39,6 +39,9 @@ function fallbackPoints(beach: Beach): ForecastPoint[] {
     windSpeed: round(beach.wind + index * 0.45),
     windDirection: 90 + index * 3,
     seaLevel: round(beach.tide + Math.sin((index - 1.5) / 2.1) * 0.65),
+    // Sem dado ao vivo (modo demonstração): usamos uma média típica da água em Salvador só para a
+    // interface não quebrar. Isso já vem com o aviso de "modo demonstração" no restante da tela.
+    waterTemperature: round(27 + Math.sin(index / 5) * 0.3),
   }));
 }
 

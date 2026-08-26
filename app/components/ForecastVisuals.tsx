@@ -3,25 +3,60 @@
 import type { Beach } from "../lib/beaches";
 import type { ForecastPoint } from "../lib/open-meteo";
 import { useForecast } from "../lib/forecast-client";
+import { classifySwell, classifyWind } from "../lib/wind-swell";
 import { DataIcon } from "./ProductShell";
 
 export function BeachForecast({ beach, activeTab }: { beach: Beach; activeTab: string }) {
   const forecast = useForecast(beach);
   const current = forecast.current;
   const tideRising = (forecast.points[1]?.seaLevel ?? 0) >= (current.seaLevel ?? 0);
+  const wind = classifyWind(current.windDirection, beach);
+  const swell = classifySwell(current.waveDirection, beach);
   return <>
     <article className="marine-summary">
-      <Metric icon="waves" label="Ondas" value={format(current.waveHeight, "m")} note="altura significativa" />
+      <Metric icon="waves" label="Ondas" value={format(current.waveHeight, "m")} note={swell.label} />
       <Metric icon="period" label="Período" value={format(current.wavePeriod, "s", 0)} note="pico modelado" />
-      <Metric icon="wind" label="Vento" value={format(current.windSpeed, "km/h", 0)} note={`${compass(current.windDirection)} · a 10 m`} />
-      <Metric icon="tide" label="Nível do mar" value={`${format(current.seaLevel, "m")} ${tideRising ? "↑" : "↓"}`} note={tideRising ? "subindo" : "descendo"} />
+      <Metric icon="wind" label="Vento" value={format(current.windSpeed, "km/h", 0)} note={wind.label} />
+      <Metric icon="tide" label="Nível do mar" value={`${format(current.seaLevel, "m")} ${tideRising ? "↑" : "↓"}`} note={`${tideRising ? "subindo" : "descendo"} · maré única p/ toda Salvador`} />
+      <Metric icon="waves" label="Temp. da água" value={format(current.waterTemperature, "°C", 1)} note="superfície do mar" />
     </article>
     <article className="forecast-chart">
       <header><div><span className="hot-kicker">Próximas 12 horas</span><h3>{chartTitle(activeTab)}</h3></div><strong>{forecast.isLive ? `Atualizado ${timeLabel(forecast.updatedAt)}` : "Modo demonstração"}</strong></header>
       {activeTab === "Relatos" ? <div className="inline-reports"><p><b>Marina · há 8 min</b> Entrando limpo, vento ainda fraco.</p><p><b>João · há 21 min</b> Séries demoradas, mas abrindo bem.</p></div> : <ForecastChart points={forecast.points} tab={activeTab} />}
       {(forecast.error || !forecast.isLive) ? <p className="forecast-source">Prévia demonstrativa. A conexão automática tenta atualizar os dados novamente ao abrir a página.</p> : <p className="forecast-source">Fonte: {forecast.source}. Previsão modelada, não indicada para navegação ou segurança marítima.</p>}
     </article>
+    {activeTab === "Visão geral" ? <SpotProfile beach={beach} /> : null}
   </>;
+}
+
+// Perfil do pico com dados pesquisados por praia (fundo, nível, direções favoráveis). Quando a fonte
+// não trouxe algum dado, mostramos isso explicitamente em vez de inventar um valor plausível.
+function SpotProfile({ beach }: { beach: Beach }) {
+  const surf = beach.surf;
+  if (!surf) return null;
+  if (!surf.isSurfSpot) {
+    return <article className="spot-profile spot-profile-warning">
+      <header><span className="hot-kicker">Perfil do pico</span><h3>Isto não é considerado um pico de surf</h3></header>
+      <p>{surf.notes}</p>
+      {surf.source ? <p className="forecast-source">Fonte: {surf.source}</p> : null}
+    </article>;
+  }
+  return <article className="spot-profile">
+    <header><span className="hot-kicker">Perfil do pico</span><h3>O que as fontes dizem sobre {beach.name}</h3></header>
+    <dl>
+      <Field label="Fundo" value={surf.bottomType} />
+      <Field label="Nível recomendado" value={surf.skillLevel} />
+      <Field label="Melhor swell" value={surf.bestSwellDirections?.join(", ")} />
+      <Field label="Melhor vento" value={surf.bestWindDirections?.join(", ") ?? (surf.facingDegrees != null ? "calculado pela orientação da praia (veja acima)" : undefined)} />
+      <Field label="Maré ideal" value={surf.bestTideNote} />
+    </dl>
+    {surf.notes ? <p>{surf.notes}</p> : null}
+    {surf.source ? <p className="forecast-source">Fonte: {surf.source}</p> : <p className="forecast-source">Nenhuma fonte confiável encontrada para os campos em branco acima — não preenchidos para evitar informação incorreta.</p>}
+  </article>;
+}
+
+function Field({ label, value }: { label: string; value?: string }) {
+  return <div><dt>{label}</dt><dd>{value ?? "Sem fonte confiável"}</dd></div>;
 }
 
 export function HomeForecast({ beach }: { beach: Beach }) {
