@@ -12,6 +12,8 @@
 // fazíamos com o Open-Meteo para onda/vento. Preferimos o dado real de terceiro (com
 // verificação e fallback) a fabricar constantes nossas sem fonte.
 
+import { bahiaToday } from "./bahia-date";
+
 export type TidePoint = { time: string; height: number };
 
 // Ponto de referência único pra maré da cidade toda (mesmo ponto/raciocínio do
@@ -32,8 +34,15 @@ let timelinePromise: Promise<TidePoint[]> | null = null;
 export function fetchHarmonicTideTimeline(): Promise<TidePoint[]> {
   if (timelinePromise) return timelinePromise;
   const request = (async () => {
-    const start = new Date();
-    const end = new Date(start.getTime() + 2 * 24 * 60 * 60 * 1000);
+    // BUG REAL corrigido (achado ao vivo em produção): antes a janela começava em `new Date()`
+    // (o instante exato da chamada). O array hourly.time do Open-Meteo (open-meteo.ts) começa
+    // à MEIA-NOITE local do dia atual, não "agora" — então qualquer horário entre meia-noite e
+    // o instante da chamada ficava ANTES do início desta janela, sem ponto "antes" pra
+    // interpolar, e interpolateHarmonicTide() retornava null pra esses horários (inclusive o
+    // "agora" exibido na tela, que é arredondado pra hora cheia). Começar à meia-noite do dia
+    // de Salvador garante que a janela cobre o mesmo intervalo que o hourly.time do Open-Meteo.
+    const start = new Date(`${bahiaToday()}T00:00:00-03:00`);
+    const end = new Date(start.getTime() + 3 * 24 * 60 * 60 * 1000);
     const url = new URL("https://api.openwaters.io/tides/timeline");
     url.search = new URLSearchParams({
       latitude: String(SALVADOR_REFERENCE.lat),
