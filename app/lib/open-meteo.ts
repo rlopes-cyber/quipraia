@@ -11,9 +11,15 @@ export type ForecastPoint = {
   windDirection: number | null;
   seaLevel: number | null;
   waterTemperature: number | null;
+  // Índice UV máximo do dia (escala OMS, 0 pra cima). A API do Open-Meteo só publica UV como
+  // agregado diário (não por hora), então o mesmo valor se repete em todos os pontos daquele dia
+  // — é assim que a maioria dos apps de tempo mostra UV mesmo (pico do dia, não variação hora a
+  // hora).
+  uvIndex: number | null;
 };
 
 type HourlyResponse = { hourly?: Record<string, Array<string | number | null>> };
+type WeatherResponse = HourlyResponse & { daily?: Record<string, Array<string | number | null>> };
 
 // Ponto de referência único para a maré de toda a cidade (ver getCityTide abaixo): perto da boca
 // da Baía de Todos os Santos / Farol da Barra, região onde a Marinha do Brasil referencia a maré
@@ -48,14 +54,18 @@ export async function fetchOpenMeteoForecast(beach: Beach): Promise<ForecastPoin
   const marineUrl = new URL("https://marine-api.open-meteo.com/v1/marine");
   marineUrl.search = new URLSearchParams({ latitude: String(beach.lat), longitude: String(beach.lon), hourly: "wave_height,wave_direction,wave_period,sea_surface_temperature", timezone: "America/Bahia", forecast_days: "2" }).toString();
   const weatherUrl = new URL("https://api.open-meteo.com/v1/forecast");
-  weatherUrl.search = new URLSearchParams({ latitude: String(beach.lat), longitude: String(beach.lon), hourly: "wind_speed_10m,wind_direction_10m", wind_speed_unit: "kmh", timezone: "America/Bahia", forecast_days: "2" }).toString();
+  // uv_index_max só existe como variável DIÁRIA na API (confirmado na documentação oficial do
+  // Open-Meteo) — não tem versão por hora, então pedimos junto com o hourly de vento na mesma
+  // chamada em vez de criar uma requisição extra só pra isso.
+  weatherUrl.search = new URLSearchParams({ latitude: String(beach.lat), longitude: String(beach.lon), hourly: "wind_speed_10m,wind_direction_10m", daily: "uv_index_max", wind_speed_unit: "kmh", timezone: "America/Bahia", forecast_days: "2" }).toString();
   const [marineResponse, weatherResponse] = await Promise.all([
     fetch(marineUrl, { next: { revalidate: 3600 } }),
     fetch(weatherUrl, { next: { revalidate: 3600 } }),
   ]);
   if (!marineResponse.ok || !weatherResponse.ok) throw new Error("Não foi possível atualizar a previsão modelada.");
-  const [marine, weather] = await Promise.all([marineResponse.json() as Promise<HourlyResponse>, weatherResponse.json() as Promise<HourlyResponse>]);
+  const [marine, weather] = await Promise.all([marineResponse.json() as Promise<HourlyResponse>, weatherResponse.json() as Promise<WeatherResponse>]);
   const times = marine.hourly?.time ?? [];
+  const uvIndexToday = numberAt(weather.daily?.uv_index_max, 0);
 
   // Maré, em ordem de preferência (cada nível só é buscado se o anterior falhar, pra não
   // gastar chamada à toa):
@@ -93,6 +103,7 @@ export async function fetchOpenMeteoForecast(beach: Beach): Promise<ForecastPoin
       windDirection: numberAt(weather.hourly?.wind_direction_10m, index),
       seaLevel,
       waterTemperature: numberAt(marine.hourly?.sea_surface_temperature, index),
+      uvIndex: uvIndexToday,
     };
   });
 }

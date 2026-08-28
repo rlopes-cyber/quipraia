@@ -81,3 +81,44 @@ export function interpolateHarmonicTide(
   const height = before.height + (after.height - before.height) * fraction;
   return { height: Math.round(height * 100) / 100, rising: after.height >= before.height };
 }
+
+
+// --- Consulta de maré por dia específico (passado ou futuro) ---------------------------------
+// Diferente de fetchHarmonicTideTimeline() acima (que sempre olha "agora + 2 dias" pra
+// alimentar o gráfico de previsão), isto aqui atende o recurso de "ver a maré de outro dia":
+// o usuário escolhe uma data qualquer e buscamos só a preamar/baixa-mar (extremos) daquele dia,
+// usando o endpoint /tides/extremes do openwaters.io, que já devolve os eventos classificados
+// (high/low) prontos — sem precisarmos interpolar nada aqui.
+
+export type TideExtremeEvent = { time: string; height: number; isHigh: boolean };
+
+type ExtremesResponse = {
+  extremes?: Array<{ time: string; level: number; high?: boolean; low?: boolean }>;
+};
+
+// `dateStr` é a data local em Salvador (YYYY-MM-DD). Cada chamada busca só aquele dia
+// (00:00 às 24:00, fuso -03:00 fixo — Bahia não observa horário de verão desde 2019), sem
+// cache de módulo: diferente da previsão "de agora", aqui cada data é um pedido independente
+// do usuário (não faz sentido reaproveitar entre dias diferentes).
+export async function fetchTideExtremesForDate(dateStr: string): Promise<TideExtremeEvent[]> {
+  const start = new Date(`${dateStr}T00:00:00-03:00`);
+  const end = new Date(start.getTime() + 24 * 60 * 60 * 1000);
+  const url = new URL("https://api.openwaters.io/tides/extremes");
+  url.search = new URLSearchParams({
+    latitude: String(SALVADOR_REFERENCE.lat),
+    longitude: String(SALVADOR_REFERENCE.lon),
+    start: start.toISOString(),
+    end: end.toISOString(),
+  }).toString();
+  // Datas passadas/futuras distantes não mudam de resultado (é cálculo, não medição ao vivo),
+  // então um cache de 1 dia é só pra não bater a API à toa em cliques repetidos do usuário.
+  const response = await fetch(url, { next: { revalidate: 86400 } });
+  if (!response.ok) throw new Error("Não foi possível calcular a maré desse dia.");
+  const data = (await response.json()) as ExtremesResponse;
+  const extremes = data.extremes ?? [];
+  return extremes.map((event) => ({
+    time: event.time,
+    height: Math.round(event.level * 100) / 100,
+    isHigh: Boolean(event.high),
+  }));
+}

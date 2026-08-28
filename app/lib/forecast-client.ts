@@ -42,6 +42,9 @@ function fallbackPoints(beach: Beach): ForecastPoint[] {
     // Sem dado ao vivo (modo demonstração): usamos uma média típica da água em Salvador só para a
     // interface não quebrar. Isso já vem com o aviso de "modo demonstração" no restante da tela.
     waterTemperature: round(27 + Math.sin(index / 5) * 0.3),
+    // Índice UV típico de um dia claro em Salvador (latitude baixa, perto do equador): mesma
+    // lógica do restante do modo demonstração, valor plausível só pra tela não quebrar.
+    uvIndex: 9,
   }));
 }
 

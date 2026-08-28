@@ -28,3 +28,22 @@
 .spot-profile dd{margin:0;text-align:right;color:#dbe4e9}
 .spot-profile>p{margin:0 0 8px;color:#c1ccd3;font-size:10px;line-height:1.6}
 @media(max-width:720px){.marine-summary{grid-template-columns:1fr 1fr}.spot-profile dl{grid-template-columns:1fr}.spot-profile dd{text-align:left}}
+
+/* Tábua de maré de outro dia (BeachForecast > aba Maré). Reusa a base visual de .spot-profile
+   (card Midnight, raio 24px) e usa os tokens Tide (#57afcb, curva/área da maré) e Period
+   (#f4b860, energia/secundário) do Design System v1 pra diferenciar preamar de baixa-mar. */
+.tide-day-nav{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.tide-day-nav>button{min-width:44px;min-height:44px;border:1px solid #31566d;border-radius:12px;background:#0d2233;color:#f4f6f7;font-size:16px;line-height:1}
+.tide-day-date{flex:1;min-height:44px;padding:6px 14px;display:grid;gap:2px;border:1px solid #31566d;border-radius:12px;background:#0d2233}
+.tide-day-date>span{color:#dbe4e9;font:600 12px "Inter",Arial,sans-serif;text-transform:capitalize}
+.tide-day-date>input{border:0;padding:0;background:none;color:#8197a5;font-size:10px;outline:0}
+.tide-day-today{min-width:44px;min-height:44px;padding:0 16px;border:1px solid #ff6b57;border-radius:12px;background:transparent;color:#ff6b57;font:650 10px "Sora",Arial,sans-serif}
+.tide-day-events{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 18px;padding:0;list-style:none}
+.tide-day-events>li{min-width:110px;flex:1;padding:14px;display:grid;gap:4px;border:1px solid #294b60;border-radius:12px;background:#0d2233;text-align:center}
+.tide-day-events>li>span{color:#8197a5;font:700 8px "Sora",Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.tide-day-events>li>strong{font:650 18px "Sora",Arial,sans-serif;color:#fff}
+.tide-day-events>li>small{color:#aebdc6;font-size:9px}
+.tide-day-events>li.tide-high>strong{color:#57afcb}
+.tide-day-events>li.tide-low>strong{color:#f4b860}
+.tide-day-empty{padding:14px;color:#8197a5;font-size:10px}
+@media(max-width:720px){.tide-day-nav{flex-wrap:wrap}.tide-day-date{order:-1;flex-basis:100%}}
