@@ -21,7 +21,7 @@ export function BeachDetails({ beach }: { beach: Beach }) {
     <nav className="beach-tabs" aria-label="Dados da praia">{tabs.map((tab) => <button className={activeTab === tab ? "active" : ""} onClick={() => setActiveTab(tab)} key={tab}>{tab}</button>)}</nav>
     <section className="beach-data-grid">
       <BeachForecast beach={beach} activeTab={activeTab} />
-      <article className="beach-community"><header><div><span className="hot-kicker">Comunidade</span><h3>Quem está na água</h3></div><a href="/comunidade">Ver todos</a></header><p><strong>12 surfistas confirmam</strong><span>Atualizado há 8 min</span></p><button>Relatar condição</button></article>
+      <article className="beach-community"><header><div><span className="hot-kicker">Comunidade</span><h3>Quem está na água</h3></div><a href="/comunidade">Ver todos</a></header><p><span>Relatos de {beach.name} das últimas 24 horas aparecem na aba Comunidade.</span></p><a className="coral-action" href="/comunidade">Relatar condição</a></article>
     </section>
     <section className="beach-gallery"><header><div><span className="hot-kicker">Explore a costa</span><h3>{beach.name} e praias próximas</h3></div><small>Imagens editoriais QuiPraia</small></header><div>{gallery.map((item) => <a href={`/praias/${item.slug}`} key={item.slug}><img loading="lazy" src={item.image} style={{ objectPosition: item.imagePosition }} alt={`Vista editorial de ${item.name}`} /><span><strong>{item.name}</strong><small>{item.condition} · {item.wave.toFixed(1)} m</small></span></a>)}</div></section>
   </>;

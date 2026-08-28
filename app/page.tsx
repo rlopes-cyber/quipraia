@@ -34,7 +34,7 @@ export default async function Home() {
     <section className="hot-info hot-shell" id="como">
       <span className="hot-kicker">Tudo o que muda a sessão</span><h2>Informação completa, sem complicar a leitura.</h2>
       <div className="hot-info-grid">
-        <article><MarineIcon name="waves"/><div><h3>Ondas</h3><p>Altura, período, direção e energia.</p></div></article>
+        <article><MarineIcon name="waves"/><div><h3>Ondas</h3><p>Altura, direção e energia.</p></div></article>
         <article><MarineIcon name="tide"/><div><h3>Maré</h3><p>Curva, preamar, baixa-mar e movimento.</p></div></article>
         <article><MarineIcon name="wind"/><div><h3>Vento</h3><p>Média, rajadas e direção ao longo do dia.</p></div></article>
       </div>
@@ -42,7 +42,7 @@ export default async function Home() {
 
     <section className="hot-beaches hot-shell" id="praias">
       <div className="hot-section-heading"><div><span className="hot-kicker">Salvador de ponta a ponta</span><h2>Veja a praia antes de escolher.</h2></div><a href="/mapa">Explorar todas as praias →</a></div>
-      <div>{featured.map((beach) => { const live = conditions.get(beach.slug); const wave = live?.waveHeight ?? beach.wave; const period = live?.wavePeriod ?? beach.period; const condition = live?.condition ?? beach.condition; return <a href={`/praias/${beach.slug}`} key={beach.slug}><img loading="lazy" src={beach.image} style={{ objectPosition: beach.imagePosition }} alt={`Vista editorial de ${beach.name}`} /><span><strong>{beach.name}</strong><small><b className={condition.toLowerCase()}>{condition}</b>{wave.toFixed(1)} m · {Math.round(period)} s</small></span></a>; })}</div>
+      <div>{featured.map((beach) => { const live = conditions.get(beach.slug); const wave = live?.waveHeight ?? beach.wave; const condition = live?.condition ?? beach.condition; return <a href={`/praias/${beach.slug}`} key={beach.slug}><img loading="lazy" src={beach.image} style={{ objectPosition: beach.imagePosition }} alt={`Vista editorial de ${beach.name}`} /><span><strong>{beach.name}</strong><small><b className={condition.toLowerCase()}>{condition}</b>{wave.toFixed(1)} m</small></span></a>; })}</div>
     </section>
 
     <section className="hot-plans hot-shell" id="planos">

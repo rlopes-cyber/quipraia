@@ -47,3 +47,7 @@
 .tide-day-events>li.tide-low>strong{color:#f4b860}
 .tide-day-empty{padding:14px;color:#8197a5;font-size:10px}
 @media(max-width:720px){.tide-day-nav{flex-wrap:wrap}.tide-day-date{order:-1;flex-basis:100%}}
+
+/* Card "Quem está na água" (BeachDetails) trocou de número fabricado pra um link honesto pra
+   Comunidade: mantém a mesma largura cheia que o botão antigo tinha. */
+.beach-community>.coral-action{width:100%}

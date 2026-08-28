@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { AttributionControl, GeolocateControl, Map as LibreMap, Marker, NavigationControl, setWorkerUrl } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { beaches } from "../lib/beaches";
+import { useForecast } from "../lib/forecast-client";
+import { scoreFromForecast } from "../lib/condition";
 import { DataIcon } from "./ProductShell";
 
 setWorkerUrl("/maplibre/maplibre-gl-worker.mjs");
@@ -16,6 +18,13 @@ export function MapExperience() {
   const [selectedSlug, setSelectedSlug] = useState("stella-maris");
   const [mapUnavailable, setMapUnavailable] = useState(false);
   const selected = beaches.find((beach) => beach.slug === selectedSlug) ?? beaches[0];
+  // Painel do mapa mostra dado AO VIVO da praia selecionada (mesma fonte da página de detalhe:
+  // useForecast), não os números fixos de beaches.ts. Antes o painel nunca mudava mesmo trocando
+  // de praia no mapa, só ficava correto depois de abrir a página da praia.
+  const forecast = useForecast(selected);
+  const current = forecast.current;
+  const tideRising = (forecast.points[1]?.seaLevel ?? 0) >= (current.seaLevel ?? 0);
+  const score = scoreFromForecast(current) ?? selected.score;
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
@@ -76,8 +85,16 @@ export function MapExperience() {
       <label className="map-picker">Escolher praia<select value={selectedSlug} onChange={(event) => selectFromFallback(event.target.value)}>{beaches.map((beach) => <option value={beach.slug} key={beach.slug}>{beach.name}</option>)}</select></label>
       <div className="map-legend"><span><i className="good" /> Bom</span><span><i className="regular" /> Regular</span><span><i className="weak" /> Fraco</span></div>
     </section>
-    <aside className="map-detail"><figure><img src={selected.image} style={{ objectPosition: selected.imagePosition }} alt={`Vista editorial de ${selected.name}`} /><figcaption>Imagem editorial QuiPraia</figcaption></figure><span className="hot-kicker">Praia selecionada</span><h2>{selected.name}</h2><b className={`condition-pill ${selected.condition.toLowerCase()}`}>● {selected.condition}</b><div className="map-metrics"><Metric icon="waves" label="Ondas" value={`${selected.wave.toFixed(1)} m`} /><Metric icon="period" label="Período" value={`${selected.period} s`} /><Metric icon="wind" label="Vento" value={`${selected.windDirection} · ${selected.wind} km/h`} /><Metric icon="tide" label="Nível do mar" value={`${selected.tide.toFixed(1)} m ↑`} /></div><p>Session Pulse <strong>{selected.score}/100</strong></p><div className="pulse-track"><i style={{ width: `${selected.score}%` }} /></div><a className="coral-action" href={`/praias/${selected.slug}`}>Abrir praia</a></aside>
+    <aside className="map-detail"><figure><img src={selected.image} style={{ objectPosition: selected.imagePosition }} alt={`Vista editorial de ${selected.name}`} /><figcaption>Imagem editorial QuiPraia</figcaption></figure><span className="hot-kicker">Praia selecionada</span><h2>{selected.name}</h2><b className={`condition-pill ${selected.condition.toLowerCase()}`}>● {selected.condition}</b><div className="map-metrics">
+        <Metric icon="waves" label="Ondas" value={format(current.waveHeight, "m")} />
+        <Metric icon="wind" label="Vento" value={format(current.windSpeed, "km/h", 0)} />
+        <Metric icon="tide" label="Nível do mar" value={`${format(current.seaLevel, "m")} ${tideRising ? "↑" : "↓"}`} />
+        <Metric icon="water-temp" label="Temp. água" value={format(current.waterTemperature, "°C", 1)} />
+      </div>
+      <p>{forecast.isLive ? "Atualizado agora" : "Prévia demonstrativa"} · Session Pulse <strong>{score}/100</strong></p>
+      <div className="pulse-track"><i style={{ width: `${score}%` }} /></div><a className="coral-action" href={`/praias/${selected.slug}`}>Abrir praia</a></aside>
   </div>;
 }
 
 function Metric({ icon, label, value }: { icon: string; label: string; value: string }) { return <div><DataIcon name={icon} /><span>{label}<strong>{value}</strong></span></div>; }
+function format(value: number | null | undefined, unit: string, decimals = 1) { return value == null ? "N/D" : `${value.toFixed(decimals)} ${unit}`; }
