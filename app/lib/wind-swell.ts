@@ -30,9 +30,9 @@ export function classifyWind(windDirectionDeg: number | null | undefined, beach:
   if (surf?.facingDegrees != null) {
     const offshoreDir = (surf.facingDegrees + 180) % 360;
     const diffFromOffshore = angularDiff(windDirectionDeg, offshoreDir);
-    if (diffFromOffshore <= 45) return { label: `${point} · terral (offshore) — favorável`, favorable: true };
+    if (diffFromOffshore <= 45) return { label: `${point} · terral (offshore), favorável`, favorable: true };
     const diffFromOnshore = angularDiff(windDirectionDeg, surf.facingDegrees);
-    if (diffFromOnshore <= 45) return { label: `${point} · maral (onshore) — desfavorável`, favorable: false };
+    if (diffFromOnshore <= 45) return { label: `${point} · maral (onshore), desfavorável`, favorable: false };
     return { label: `${point} · vento de través (cross-shore)`, favorable: null };
   }
   if (surf?.bestWindDirections?.length) {
