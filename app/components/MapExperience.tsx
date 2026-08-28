@@ -8,7 +8,9 @@ import { useForecast } from "../lib/forecast-client";
 import { scoreFromForecast } from "../lib/condition";
 import { DataIcon } from "./ProductShell";
 
-setWorkerUrl("/maplibre/maplibre-gl-worker.mjs");
+// maplibre-gl@4 (WebGL1-compatible, v6 exige WebGL2 obrigatoriamente e quebra em navegadores/
+// contextos sem isso, achado ao vivo em produção) usa um worker CSP em .js, não .mjs como o v6.
+setWorkerUrl("/maplibre/maplibre-gl-csp-worker.js");
 const tileUrl = process.env.NEXT_PUBLIC_MAP_TILE_URL || "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
 
 export function MapExperience() {

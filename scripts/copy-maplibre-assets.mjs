@@ -14,7 +14,7 @@ const projectRoot = dirname(dirname(fileURLToPath(import.meta.url)));
 const sourceDir = join(projectRoot, "node_modules", "maplibre-gl", "dist");
 const targetDir = join(projectRoot, "public", "maplibre");
 
-const files = ["maplibre-gl-worker.mjs"];
+const files = ["maplibre-gl-csp-worker.js"];
 
 mkdirSync(targetDir, { recursive: true });
 
