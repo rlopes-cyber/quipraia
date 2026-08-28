@@ -1,4 +1,5 @@
 import type { Beach } from "./beaches";
+import { fetchHarmonicTideTimeline, interpolateHarmonicTide } from "./tide-database";
 import { fetchCityTideExtremes, interpolateTide } from "./tide-scrape";
 
 export type ForecastPoint = {
@@ -56,10 +57,16 @@ export async function fetchOpenMeteoForecast(beach: Beach): Promise<ForecastPoin
   const [marine, weather] = await Promise.all([marineResponse.json() as Promise<HourlyResponse>, weatherResponse.json() as Promise<HourlyResponse>]);
   const times = marine.hourly?.time ?? [];
 
-  // Maré: tenta primeiro a tábua real (preamar/baixa-mar do Porto de Salvador via tide-scrape.ts).
-  // Só busca o fallback do Open-Meteo se a raspagem falhar, pra não gastar uma chamada à toa.
-  const tideExtremes = await fetchCityTideExtremes().catch(() => null);
-  const modelTide = tideExtremes ? null : await fetchCityTide().catch(() => null);
+  // Maré, em ordem de preferência (cada nível só é buscado se o anterior falhar, pra não
+  // gastar chamada à toa):
+  //   1) Cálculo harmônico real (TICON-4 via openwaters.io, tide-database.ts) — mesmo tipo de
+  //      cálculo que sites como tabuademares.com fazem, com dado de estação real de Salvador.
+  //   2) Tábua de preamar/baixa-mar do Porto de Salvador raspada do surfguru (tide-scrape.ts).
+  //   3) Estimativa do Open-Meteo (sea_level_height_msl) — a menos precisa das três, mas evita
+  //      deixar a tela sem nenhum dado de maré se as duas fontes reais acima falharem.
+  const harmonicTimeline = await fetchHarmonicTideTimeline().catch(() => null);
+  const tideExtremes = harmonicTimeline ? null : await fetchCityTideExtremes().catch(() => null);
+  const modelTide = harmonicTimeline || tideExtremes ? null : await fetchCityTide().catch(() => null);
 
   // Open-Meteo retorna horários locais "soltos" (ex.: 2026-08-24T18:00), sem offset de fuso.
   // Sem o offset explícito, o navegador do visitante interpretaria esse horário no SEU fuso local
@@ -68,8 +75,15 @@ export async function fetchOpenMeteoForecast(beach: Beach): Promise<ForecastPoin
   // então o offset -03:00 é sempre correto aqui.
   return times.map((time, index) => {
     const iso = `${String(time)}-03:00`;
-    const scraped = tideExtremes ? interpolateTide(tideExtremes, iso) : null;
-    const seaLevel = scraped ? scraped.height : (modelTide ? numberAt(modelTide.hourly?.sea_level_height_msl, index) : null);
+    const harmonic = harmonicTimeline ? interpolateHarmonicTide(harmonicTimeline, iso) : null;
+    const scraped = !harmonic && tideExtremes ? interpolateTide(tideExtremes, iso) : null;
+    const seaLevel = harmonic
+      ? harmonic.height
+      : scraped
+        ? scraped.height
+        : modelTide
+          ? numberAt(modelTide.hourly?.sea_level_height_msl, index)
+          : null;
     return {
       time: iso,
       waveHeight: numberAt(marine.hourly?.wave_height, index),
